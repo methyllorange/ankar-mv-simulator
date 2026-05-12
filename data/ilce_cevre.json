@@ -1,0 +1,4897 @@
+[
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "ALADAG",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "CEYHAN",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "CUKUROVA",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "FEKE",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "IMAMOGLU",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "KARAISALI",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "KARATAS",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "KOZAN",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "POZANTI",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "SAIMBEYLI",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "SARICAM",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "SEYHAN",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "TUFANBEYLI",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "YUMURTALIK",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADANA",
+    "ILCE_ADI": "YUREGIR",
+    "cevre_id": "ADANA"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "ADIYAMAN_MERKEZ",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "BESNI",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "CELIKHAN",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "GERGER",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "GOLBASI",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "KAHTA",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "SAMSAT",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "SINCIK",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "ADIYAMAN",
+    "ILCE_ADI": "TUT",
+    "cevre_id": "ADIYAMAN"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "AFYONKARAHISAR_MERKEZ",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "BASMAKCI",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "BAYAT",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "BOLVADIN",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "CAY",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "COBANLAR",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "DAZKIRI",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "DINAR",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "EMIRDAG",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "EVCILER",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "HOCALAR",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "IHSANIYE",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "ISCEHISAR",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "KIZILOREN",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "SANDIKLI",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "SINANPASA",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "SUHUT",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AFYONKARAHISAR",
+    "ILCE_ADI": "SULTANDAGI",
+    "cevre_id": "AFYONKARAHISAR"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "AGRI_MERKEZ",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "DIYADIN",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "DOGUBAYAZIT",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "ELESKIRT",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "HAMUR",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "PATNOS",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "TASLICAY",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AGRI",
+    "ILCE_ADI": "TUTAK",
+    "cevre_id": "AGRI"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "AGACOREN",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "AKSARAY_MERKEZ",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "ESKIL",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "GULAGAC",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "GUZELYURT",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "ORTAKOY",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "SARIYAHSI",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AKSARAY",
+    "ILCE_ADI": "SULTANHANI",
+    "cevre_id": "AKSARAY"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "AMASYA_MERKEZ",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "GOYNUCEK",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "GUMUSHACIKOY",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "HAMAMOZU",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "MERZIFON",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "SULUOVA",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "AMASYA",
+    "ILCE_ADI": "TASOVA",
+    "cevre_id": "AMASYA"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "AKYURT",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "ALTINDAG",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "AYAS",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "BALA",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "BEYPAZARI",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "CAMLIDERE",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "CANKAYA",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "CUBUK",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "ELMADAG",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "ETIMESGUT",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "EVREN",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "GOLBASI",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "GUDUL",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "HAYMANA",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "KAHRAMANKAZAN",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "KALECIK",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "KECIOREN",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "KIZILCAHAMAM",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "MAMAK",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "NALLIHAN",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "POLATLI",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "PURSAKLAR",
+    "cevre_id": "ANKARA_2"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "SEREFLIKOCHISAR",
+    "cevre_id": "ANKARA_1"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "SINCAN",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANKARA",
+    "ILCE_ADI": "YENIMAHALLE",
+    "cevre_id": "ANKARA_3"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "AKSEKI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "AKSU",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "ALANYA",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "DEMRE",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "DOSEMEALTI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "ELMALI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "FINIKE",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "GAZIPASA",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "GUNDOGMUS",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "IBRADI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KAS",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KEMER",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KEPEZ",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KONYAALTI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KORKUTELI",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "KUMLUCA",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "MANAVGAT",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "MURATPASA",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ANTALYA",
+    "ILCE_ADI": "SERIK",
+    "cevre_id": "ANTALYA"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "ARDAHAN_MERKEZ",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "CILDIR",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "DAMAL",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "GOLE",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "HANAK",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARDAHAN",
+    "ILCE_ADI": "POSOF",
+    "cevre_id": "ARDAHAN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "ARDANUC",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "ARHAVI",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "ARTVIN_MERKEZ",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "BORCKA",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "HOPA",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "KEMALPASA",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "MURGUL",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "SAVSAT",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "ARTVIN",
+    "ILCE_ADI": "YUSUFELI",
+    "cevre_id": "ARTVIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "BOZDOGAN",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "BUHARKENT",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "CINE",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "DIDIM",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "EFELER",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "GERMENCIK",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "INCIRLIOVA",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KARACASU",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KARPUZLU",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KOCARLI",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KOSK",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KUSADASI",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "KUYUCAK",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "NAZILLI",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "SOKE",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "SULTANHISAR",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "AYDIN",
+    "ILCE_ADI": "YENIPAZAR",
+    "cevre_id": "AYDIN"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "ALTIEYLUL",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "AYVALIK",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "BALYA",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "BANDIRMA",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "BIGADIC",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "BURHANIYE",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "DURSUNBEY",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "EDREMIT",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "ERDEK",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "GOMEC",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "GONEN",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "HAVRAN",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "IVRINDI",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "KARESI",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "KEPSUT",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "MANYAS",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "MARMARA",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "SAVASTEPE",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "SINDIRGI",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BALIKESIR",
+    "ILCE_ADI": "SUSURLUK",
+    "cevre_id": "BALIKESIR"
+  },
+  {
+    "IL_ADI": "BARTIN",
+    "ILCE_ADI": "AMASRA",
+    "cevre_id": "BARTIN"
+  },
+  {
+    "IL_ADI": "BARTIN",
+    "ILCE_ADI": "BARTIN_MERKEZ",
+    "cevre_id": "BARTIN"
+  },
+  {
+    "IL_ADI": "BARTIN",
+    "ILCE_ADI": "KURUCASILE",
+    "cevre_id": "BARTIN"
+  },
+  {
+    "IL_ADI": "BARTIN",
+    "ILCE_ADI": "ULUS",
+    "cevre_id": "BARTIN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "BATMAN_MERKEZ",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "BESIRI",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "GERCUS",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "HASANKEYF",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "KOZLUK",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BATMAN",
+    "ILCE_ADI": "SASON",
+    "cevre_id": "BATMAN"
+  },
+  {
+    "IL_ADI": "BAYBURT",
+    "ILCE_ADI": "AYDINTEPE",
+    "cevre_id": "BAYBURT"
+  },
+  {
+    "IL_ADI": "BAYBURT",
+    "ILCE_ADI": "BAYBURT_MERKEZ",
+    "cevre_id": "BAYBURT"
+  },
+  {
+    "IL_ADI": "BAYBURT",
+    "ILCE_ADI": "DEMIROZU",
+    "cevre_id": "BAYBURT"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "BILECIK_MERKEZ",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "BOZUYUK",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "GOLPAZARI",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "INHISAR",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "OSMANELI",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "PAZARYERI",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "SOGUT",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BILECIK",
+    "ILCE_ADI": "YENIPAZAR",
+    "cevre_id": "BILECIK"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "ADAKLI",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "BINGOL_MERKEZ",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "GENC",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "KARLIOVA",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "KIGI",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "SOLHAN",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "YAYLADERE",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BINGOL",
+    "ILCE_ADI": "YEDISU",
+    "cevre_id": "BINGOL"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "ADILCEVAZ",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "AHLAT",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "BITLIS_MERKEZ",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "GUROYMAK",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "HIZAN",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "MUTKI",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BITLIS",
+    "ILCE_ADI": "TATVAN",
+    "cevre_id": "BITLIS"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "BOLU_MERKEZ",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "DORTDIVAN",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "GEREDE",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "GOYNUK",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "KIBRISCIK",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "MENGEN",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "MUDURNU",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "SEBEN",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BOLU",
+    "ILCE_ADI": "YENICAGA",
+    "cevre_id": "BOLU"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "AGLASUN",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "ALTINYAYLA",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "BUCAK",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "BURDUR_MERKEZ",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "CAVDIR",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "CELTIKCI",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "GOLHISAR",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "KARAMANLI",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "KEMER",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "TEFENNI",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURDUR",
+    "ILCE_ADI": "YESILOVA",
+    "cevre_id": "BURDUR"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "BUYUKORHAN",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "GEMLIK",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "GURSU",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "HARMANCIK",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "INEGOL",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "IZNIK",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "KARACABEY",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "KELES",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "KESTEL",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "MUDANYA",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "MUSTAFAKEMALPASA",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "NILUFER",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "ORHANELI",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "ORHANGAZI",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "OSMANGAZI",
+    "cevre_id": "BURSA_1"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "YENISEHIR",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "BURSA",
+    "ILCE_ADI": "YILDIRIM",
+    "cevre_id": "BURSA_2"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "AYVACIK",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "BAYRAMIC",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "BIGA",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "BOZCAADA",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "CAN",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "CANAKKALE_MERKEZ",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "ECEABAT",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "EZINE",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "GELIBOLU",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "GOKCEADA",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "LAPSEKI",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANAKKALE",
+    "ILCE_ADI": "YENICE",
+    "cevre_id": "CANAKKALE"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "ATKARACALAR",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "BAYRAMOREN",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "CANKIRI_MERKEZ",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "CERKES",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "ELDIVAN",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "ILGAZ",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "KIZILIRMAK",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "KORGUN",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "KURSUNLU",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "ORTA",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "SABANOZU",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CANKIRI",
+    "ILCE_ADI": "YAPRAKLI",
+    "cevre_id": "CANKIRI"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "ALACA",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "BAYAT",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "BOGAZKALE",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "CORUM_MERKEZ",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "DODURGA",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "ISKILIP",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "KARGI",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "LACIN",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "MECITOZU",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "OGUZLAR",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "ORTAKOY",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "OSMANCIK",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "SUNGURLU",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "CORUM",
+    "ILCE_ADI": "UGURLUDAG",
+    "cevre_id": "CORUM"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "ACIPAYAM",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BABADAG",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BAKLAN",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BEKILLI",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BEYAGAC",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BOZKURT",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "BULDAN",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "CAL",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "CAMELI",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "CARDAK",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "CIVRIL",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "GUNEY",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "HONAZ",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "KALE",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "MERKEZEFENDI",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "PAMUKKALE",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "SARAYKOY",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "SERINHISAR",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DENIZLI",
+    "ILCE_ADI": "TAVAS",
+    "cevre_id": "DENIZLI"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "BAGLAR",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "BISMIL",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "CERMIK",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "CINAR",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "CUNGUS",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "DICLE",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "EGIL",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "ERGANI",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "HANI",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "HAZRO",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "KAYAPINAR",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "KOCAKOY",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "KULP",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "LICE",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "SILVAN",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "SUR",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DIYARBAKIR",
+    "ILCE_ADI": "YENISEHIR",
+    "cevre_id": "DIYARBAKIR"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "AKCAKOCA",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "CILIMLI",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "CUMAYERI",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "DUZCE_MERKEZ",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "GOLYAKA",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "GUMUSOVA",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "KAYNASLI",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "DUZCE",
+    "ILCE_ADI": "YIGILCA",
+    "cevre_id": "DUZCE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "EDIRNE_MERKEZ",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "ENEZ",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "HAVSA",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "IPSALA",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "KESAN",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "LALAPASA",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "MERIC",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "SULOGLU",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "EDIRNE",
+    "ILCE_ADI": "UZUNKOPRU",
+    "cevre_id": "EDIRNE"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "AGIN",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "ALACAKAYA",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "ARICAK",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "BASKIL",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "ELAZIG_MERKEZ",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "KARAKOCAN",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "KEBAN",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "KOVANCILAR",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "MADEN",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "PALU",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ELAZIG",
+    "ILCE_ADI": "SIVRICE",
+    "cevre_id": "ELAZIG"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "CAYIRLI",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "ERZINCAN_MERKEZ",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "ILIC",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "KEMAH",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "KEMALIYE",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "OTLUKBELI",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "REFAHIYE",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "TERCAN",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZINCAN",
+    "ILCE_ADI": "UZUMLU",
+    "cevre_id": "ERZINCAN"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "ASKALE",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "AZIZIYE",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "CAT",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "HINIS",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "HORASAN",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "ISPIR",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "KARACOBAN",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "KARAYAZI",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "KOPRUKOY",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "NARMAN",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "OLTU",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "OLUR",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "PALANDOKEN",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "PASINLER",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "PAZARYOLU",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "SENKAYA",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "TEKMAN",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "TORTUM",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "UZUNDERE",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ERZURUM",
+    "ILCE_ADI": "YAKUTIYE",
+    "cevre_id": "ERZURUM"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "ALPU",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "BEYLIKOVA",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "CIFTELER",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "GUNYUZU",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "HAN",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "INONU",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "MAHMUDIYE",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "MIHALGAZI",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "MIHALICCIK",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "ODUNPAZARI",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "SARICAKAYA",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "SEYITGAZI",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "SIVRIHISAR",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "ESKISEHIR",
+    "ILCE_ADI": "TEPEBASI",
+    "cevre_id": "ESKISEHIR"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "ARABAN",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "ISLAHIYE",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "KARKAMIS",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "NIZIP",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "NURDAGI",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "OGUZELI",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "SAHINBEY",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "SEHITKAMIL",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GAZIANTEP",
+    "ILCE_ADI": "YAVUZELI",
+    "cevre_id": "GAZIANTEP"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "ALUCRA",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "BULANCAK",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "CAMOLUK",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "CANAKCI",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "DERELI",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "DOGANKENT",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "ESPIYE",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "EYNESIL",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "GIRESUN_MERKEZ",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "GORELE",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "GUCE",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "KESAP",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "PIRAZIZ",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "SEBINKARAHISAR",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "TIREBOLU",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GIRESUN",
+    "ILCE_ADI": "YAGLIDERE",
+    "cevre_id": "GIRESUN"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "GUMUSHANE_MERKEZ",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "GUMUSHANE_MERKEZ___ARZULARKABAKOY",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "KELKIT",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "KOSE",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "KURTUN",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "SIRAN",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "GUMUSHANE",
+    "ILCE_ADI": "TORUL",
+    "cevre_id": "GUMUSHANE"
+  },
+  {
+    "IL_ADI": "HAKKARI",
+    "ILCE_ADI": "CUKURCA",
+    "cevre_id": "HAKKARI"
+  },
+  {
+    "IL_ADI": "HAKKARI",
+    "ILCE_ADI": "DERECIK",
+    "cevre_id": "HAKKARI"
+  },
+  {
+    "IL_ADI": "HAKKARI",
+    "ILCE_ADI": "HAKKARI_MERKEZ",
+    "cevre_id": "HAKKARI"
+  },
+  {
+    "IL_ADI": "HAKKARI",
+    "ILCE_ADI": "SEMDINLI",
+    "cevre_id": "HAKKARI"
+  },
+  {
+    "IL_ADI": "HAKKARI",
+    "ILCE_ADI": "YUKSEKOVA",
+    "cevre_id": "HAKKARI"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "ALTINOZU",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "ANTAKYA",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "ARSUZ",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "BELEN",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "DEFNE",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "DORTYOL",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "ERZIN",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "HASSA",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "ISKENDERUN",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "KIRIKHAN",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "KUMLU",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "PAYAS",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "REYHANLI",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "SAMANDAG",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "HATAY",
+    "ILCE_ADI": "YAYLADAGI",
+    "cevre_id": "HATAY"
+  },
+  {
+    "IL_ADI": "IGDIR",
+    "ILCE_ADI": "ARALIK",
+    "cevre_id": "IGDIR"
+  },
+  {
+    "IL_ADI": "IGDIR",
+    "ILCE_ADI": "IGDIR_MERKEZ",
+    "cevre_id": "IGDIR"
+  },
+  {
+    "IL_ADI": "IGDIR",
+    "ILCE_ADI": "KARAKOYUNLU",
+    "cevre_id": "IGDIR"
+  },
+  {
+    "IL_ADI": "IGDIR",
+    "ILCE_ADI": "TUZLUCA",
+    "cevre_id": "IGDIR"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "AKSU",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "ATABEY",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "EGIRDIR",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "GELENDOST",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "GONEN",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "ISPARTA_MERKEZ",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "KECIBORLU",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "SARKIKARAAGAC",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "SENIRKENT",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "SUTCULER",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "ULUBORLU",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "YALVAC",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISPARTA",
+    "ILCE_ADI": "YENISARBADEMLI",
+    "cevre_id": "ISPARTA"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ADALAR",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ARNAVUTKOY",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ATASEHIR",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "AVCILAR",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BAGCILAR",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BAHCELIEVLER",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BAKIRKOY",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BASAKSEHIR",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BAYRAMPASA",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BESIKTAS",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BEYKOZ",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BEYLIKDUZU",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BEYOGLU",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "BUYUKCEKMECE",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "CATALCA",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "CEKMEKOY",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ESENLER",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ESENYURT",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "EYUPSULTAN",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "FATIH",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "GAZIOSMANPASA",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "GUNGOREN",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "KADIKOY",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "KAGITHANE",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "KARTAL",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "KUCUKCEKMECE",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "MALTEPE",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "PENDIK",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SANCAKTEPE",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SARIYER",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SILE",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SILIVRI",
+    "cevre_id": "ISTANBUL_3"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SISLI",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SULTANBEYLI",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "SULTANGAZI",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "TUZLA",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "UMRANIYE",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "USKUDAR",
+    "cevre_id": "ISTANBUL_1"
+  },
+  {
+    "IL_ADI": "ISTANBUL",
+    "ILCE_ADI": "ZEYTINBURNU",
+    "cevre_id": "ISTANBUL_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "ALIAGA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BALCOVA",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BAYINDIR",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BAYRAKLI",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BERGAMA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BEYDAG",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BORNOVA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "BUCA",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "CESME",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "CIGLI",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "DIKILI",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "FOCA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "GAZIEMIR",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "GUZELBAHCE",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KARABAGLAR",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KARABURUN",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KARSIYAKA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KEMALPASA",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KINIK",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KIRAZ",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "KONAK",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "MENDERES",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "MENEMEN",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "NARLIDERE",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "ODEMIS",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "SEFERIHISAR",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "SELCUK",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "TIRE",
+    "cevre_id": "IZMIR_2"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "TORBALI",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "IZMIR",
+    "ILCE_ADI": "URLA",
+    "cevre_id": "IZMIR_1"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "AFSIN",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "ANDIRIN",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "CAGLAYANCERIT",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "DULKADIROGLU",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "EKINOZU",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "ELBISTAN",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "GOKSUN",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "NURHAK",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "ONIKISUBAT",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "PAZARCIK",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KAHRAMANMARAS",
+    "ILCE_ADI": "TURKOGLU",
+    "cevre_id": "KAHRAMANMARAS"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "EFLANI",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "ESKIPAZAR",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "KARABUK_MERKEZ",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "OVACIK",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "SAFRANBOLU",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARABUK",
+    "ILCE_ADI": "YENICE",
+    "cevre_id": "KARABUK"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "AYRANCI",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "BASYAYLA",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "ERMENEK",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "KARAMAN_MERKEZ",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "KAZIMKARABEKIR",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARAMAN",
+    "ILCE_ADI": "SARIVELILER",
+    "cevre_id": "KARAMAN"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "AKYAKA",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "ARPACAY",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "DIGOR",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "KAGIZMAN",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "KARS_MERKEZ",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "SARIKAMIS",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "SELIM",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KARS",
+    "ILCE_ADI": "SUSUZ",
+    "cevre_id": "KARS"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "ABANA",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "AGLI",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "ARAC",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "AZDAVAY",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "BOZKURT",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "CATALZEYTIN",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "CIDE",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "DADAY",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "DEVREKANI",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "DOGANYURT",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "HANONU",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "IHSANGAZI",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "INEBOLU",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "KASTAMONU_MERKEZ",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "KURE",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "PINARBASI",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "SENPAZAR",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "SEYDILER",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "TASKOPRU",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KASTAMONU",
+    "ILCE_ADI": "TOSYA",
+    "cevre_id": "KASTAMONU"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "AKKISLA",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "BUNYAN",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "DEVELI",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "FELAHIYE",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "HACILAR",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "INCESU",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "KOCASINAN",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "MELIKGAZI",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "OZVATAN",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "PINARBASI",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "SARIOGLAN",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "SARIZ",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "TALAS",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "TOMARZA",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "YAHYALI",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KAYSERI",
+    "ILCE_ADI": "YESILHISAR",
+    "cevre_id": "KAYSERI"
+  },
+  {
+    "IL_ADI": "KILIS",
+    "ILCE_ADI": "ELBEYLI",
+    "cevre_id": "KILIS"
+  },
+  {
+    "IL_ADI": "KILIS",
+    "ILCE_ADI": "KILIS_MERKEZ",
+    "cevre_id": "KILIS"
+  },
+  {
+    "IL_ADI": "KILIS",
+    "ILCE_ADI": "MUSABEYLI",
+    "cevre_id": "KILIS"
+  },
+  {
+    "IL_ADI": "KILIS",
+    "ILCE_ADI": "POLATELI",
+    "cevre_id": "KILIS"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "BAHSILI",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "BALISEYH",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "CELEBI",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "DELICE",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "KARAKECILI",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "KESKIN",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "KIRIKKALE_MERKEZ",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "KIRIKKALE_MERKEZ___HACILAR",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "SULAKYURT",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRIKKALE",
+    "ILCE_ADI": "YAHSIHAN",
+    "cevre_id": "KIRIKKALE"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "BABAESKI",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "DEMIRKOY",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "KIRKLARELI_MERKEZ",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "KOFCAZ",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "LULEBURGAZ",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "PEHLIVANKOY",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "PINARHISAR",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRKLARELI",
+    "ILCE_ADI": "VIZE",
+    "cevre_id": "KIRKLARELI"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "AKCAKENT",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "AKPINAR",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "BOZTEPE",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "CICEKDAGI",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "KAMAN",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "KIRSEHIR_MERKEZ",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KIRSEHIR",
+    "ILCE_ADI": "MUCUR",
+    "cevre_id": "KIRSEHIR"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "BASISKELE",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "CAYIROVA",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "DARICA",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "DERINCE",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "DILOVASI",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "GEBZE",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "GOLCUK",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "IZMIT",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "KANDIRA",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "KARAMURSEL",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "KARTEPE",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KOCAELI",
+    "ILCE_ADI": "KORFEZ",
+    "cevre_id": "KOCAELI"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "AHIRLI",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "AKOREN",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "AKSEHIR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "ALTINEKIN",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "BEYSEHIR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "BOZKIR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "CELTIK",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "CIHANBEYLI",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "CUMRA",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "DERBENT",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "DEREBUCAK",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "DOGANHISAR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "EMIRGAZI",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "EREGLI",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "GUNEYSINIR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "HADIM",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "HALKAPINAR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "HUYUK",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "ILGIN",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "KADINHANI",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "KARAPINAR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "KARATAY",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "KULU",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "MERAM",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "SARAYONU",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "SELCUKLU",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "SEYDISEHIR",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "TASKENT",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "TUZLUKCU",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "YALIHUYUK",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KONYA",
+    "ILCE_ADI": "YUNAK",
+    "cevre_id": "KONYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "ALTINTAS",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "ASLANAPA",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "CAVDARHISAR",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "DOMANIC",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "DUMLUPINAR",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "EMET",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "GEDIZ",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "HISARCIK",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "KUTAHYA_MERKEZ",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "PAZARLAR",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "SAPHANE",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "SIMAV",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "KUTAHYA",
+    "ILCE_ADI": "TAVSANLI",
+    "cevre_id": "KUTAHYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "AKCADAG",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "ARAPGIR",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "ARGUVAN",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "BATTALGAZI",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "DARENDE",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "DOGANSEHIR",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "DOGANYOL",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "HEKIMHAN",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "KALE",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "KULUNCAK",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "PUTURGE",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "YAZIHAN",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MALATYA",
+    "ILCE_ADI": "YESILYURT",
+    "cevre_id": "MALATYA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "AHMETLI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "AKHISAR",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "ALASEHIR",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "DEMIRCI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "GOLMARMARA",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "GORDES",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "KIRKAGAC",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "KOPRUBASI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "KULA",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SALIHLI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SARIGOL",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SARUHANLI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SEHZADELER",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SELENDI",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "SOMA",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "TURGUTLU",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MANISA",
+    "ILCE_ADI": "YUNUSEMRE",
+    "cevre_id": "MANISA"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "ARTUKLU",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "DARGECIT",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "DERIK",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "KIZILTEPE",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "MAZIDAGI",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "MIDYAT",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "NUSAYBIN",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "OMERLI",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "SAVUR",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MARDIN",
+    "ILCE_ADI": "YESILLI",
+    "cevre_id": "MARDIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "AKDENIZ",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "ANAMUR",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "AYDINCIK",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "BOZYAZI",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "CAMLIYAYLA",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "ERDEMLI",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "GULNAR",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "MEZITLI",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "MUT",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "SILIFKE",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "TARSUS",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "TOROSLAR",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MERSIN",
+    "ILCE_ADI": "YENISEHIR",
+    "cevre_id": "MERSIN"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "BODRUM",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "DALAMAN",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "DATCA",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "FETHIYE",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "KAVAKLIDERE",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "KOYCEGIZ",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "MARMARIS",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "MENTESE",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "MILAS",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "ORTACA",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "SEYDIKEMER",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "ULA",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUGLA",
+    "ILCE_ADI": "YATAGAN",
+    "cevre_id": "MUGLA"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "BULANIK",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "HASKOY",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "KORKUT",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "MALAZGIRT",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "MUS_MERKEZ",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "MUS",
+    "ILCE_ADI": "VARTO",
+    "cevre_id": "MUS"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "ACIGOL",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "AVANOS",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "DERINKUYU",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "GULSEHIR",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "HACIBEKTAS",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "KOZAKLI",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "NEVSEHIR_MERKEZ",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "NEVSEHIR_MERKEZ___UCHISAR",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NEVSEHIR",
+    "ILCE_ADI": "URGUP",
+    "cevre_id": "NEVSEHIR"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "ALTUNHISAR",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "BOR",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "CAMARDI",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "CIFTLIK",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "NIGDE_MERKEZ",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "NIGDE",
+    "ILCE_ADI": "ULUKISLA",
+    "cevre_id": "NIGDE"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "AKKUS",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "ALTINORDU",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "AYBASTI",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "CAMAS",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "CATALPINAR",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "CAYBASI",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "FATSA",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "GOLKOY",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "GULYALI",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "GURGENTEPE",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "IKIZCE",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "KABADUZ",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "KABATAS",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "KORGAN",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "KUMRU",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "MESUDIYE",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "PERSEMBE",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "ULUBEY",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "ORDU",
+    "ILCE_ADI": "UNYE",
+    "cevre_id": "ORDU"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "BAHCE",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "DUZICI",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "HASANBEYLI",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "KADIRLI",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "OSMANIYE_MERKEZ",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "SUMBAS",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "TOPRAKKALE",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "OSMANIYE",
+    "ILCE_ADI": "TOPRAKKALE___TURKMEN",
+    "cevre_id": "OSMANIYE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "ARDESEN",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "CAMLIHEMSIN",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "CAYELI",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "DEREPAZARI",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "FINDIKLI",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "GUNEYSU",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "HEMSIN",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "IKIZDERE",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "IYIDERE",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "KALKANDERE",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "PAZAR",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "RIZE",
+    "ILCE_ADI": "RIZE_MERKEZ",
+    "cevre_id": "RIZE"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "ADAPAZARI",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "AKYAZI",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "ARIFIYE",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "ERENLER",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "FERIZLI",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "GEYVE",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "HENDEK",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "KARAPURCEK",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "KARASU",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "KAYNARCA",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "KOCAALI",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "PAMUKOVA",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "SAPANCA",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "SERDIVAN",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "SOGUTLU",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAKARYA",
+    "ILCE_ADI": "TARAKLI",
+    "cevre_id": "SAKARYA"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "19_MAYIS",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "ALACAM",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "ASARCIK",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "ATAKUM",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "AYVACIK",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "BAFRA",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "CANIK",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "CARSAMBA",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "HAVZA",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "ILKADIM",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "KAVAK",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "LADIK",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "SALIPAZARI",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "TEKKEKOY",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "TERME",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "VEZIRKOPRU",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SAMSUN",
+    "ILCE_ADI": "YAKAKENT",
+    "cevre_id": "SAMSUN"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "AKCAKALE",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "BIRECIK",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "BOZOVA",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "CEYLANPINAR",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "EYYUBIYE",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "HALFETI",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "HALILIYE",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "HARRAN",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "HILVAN",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "KARAKOPRU",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "SIVEREK",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "SURUC",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SANLIURFA",
+    "ILCE_ADI": "VIRANSEHIR",
+    "cevre_id": "SANLIURFA"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "BAYKAN",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "ERUH",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "KURTALAN",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "PERVARI",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "SIIRT_MERKEZ",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "SIRVAN",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SIIRT",
+    "ILCE_ADI": "TILLO",
+    "cevre_id": "SIIRT"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "AYANCIK",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "BOYABAT",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "DIKMEN",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "DURAGAN",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "ERFELEK",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "GERZE",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "SARAYDUZU",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "SINOP_MERKEZ",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SINOP",
+    "ILCE_ADI": "TURKELI",
+    "cevre_id": "SINOP"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "BEYTUSSEBAP",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "CIZRE",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "GUCLUKONAK",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "IDIL",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "SILOPI",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "SIRNAK_MERKEZ",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIRNAK",
+    "ILCE_ADI": "ULUDERE",
+    "cevre_id": "SIRNAK"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "AKINCILAR",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "ALTINYAYLA",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "DIVRIGI",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "DOGANSAR",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "GEMEREK",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "GOLOVA",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "GURUN",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "HAFIK",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "IMRANLI",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "KANGAL",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "KOYULHISAR",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "SARKISLA",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "SIVAS_MERKEZ",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "SUSEHRI",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "ULAS",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "YILDIZELI",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "SIVAS",
+    "ILCE_ADI": "ZARA",
+    "cevre_id": "SIVAS"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "CERKEZKOY",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "CORLU",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "ERGENE",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "HAYRABOLU",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "KAPAKLI",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "MALKARA",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "MARMARAEREGLISI",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "MURATLI",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "SARAY",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "SARKOY",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TEKIRDAG",
+    "ILCE_ADI": "SULEYMANPASA",
+    "cevre_id": "TEKIRDAG"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "ALMUS",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "ARTOVA",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "BASCIFTLIK",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "ERBAA",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "NIKSAR",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "PAZAR",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "RESADIYE",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "SULUSARAY",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "TOKAT_MERKEZ",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "TOKAT_MERKEZ___CAMLIBEL",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "TURHAL",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "YESILYURT",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TOKAT",
+    "ILCE_ADI": "ZILE",
+    "cevre_id": "TOKAT"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "AKCAABAT",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "ARAKLI",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "ARSIN",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "BESIKDUZU",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "CARSIBASI",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "CAYKARA",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "DERNEKPAZARI",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "DUZKOY",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "HAYRAT",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "KOPRUBASI",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "MACKA",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "OF",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "ORTAHISAR",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "SALPAZARI",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "SURMENE",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "TONYA",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "VAKFIKEBIR",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TRABZON",
+    "ILCE_ADI": "YOMRA",
+    "cevre_id": "TRABZON"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "CEMISGEZEK",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "HOZAT",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "MAZGIRT",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "NAZIMIYE",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "OVACIK",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "PERTEK",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "PULUMUR",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "TUNCELI",
+    "ILCE_ADI": "TUNCELI_MERKEZ",
+    "cevre_id": "TUNCELI"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "BANAZ",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "ESME",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "KARAHALLI",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "SIVASLI",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "ULUBEY",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "USAK",
+    "ILCE_ADI": "USAK_MERKEZ",
+    "cevre_id": "USAK"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "BAHCESARAY",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "BASKALE",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "CALDIRAN",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "CATAK",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "EDREMIT",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "ERCIS",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "GEVAS",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "GURPINAR",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "IPEKYOLU",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "MURADIYE",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "OZALP",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "SARAY",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "VAN",
+    "ILCE_ADI": "TUSBA",
+    "cevre_id": "VAN"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "ALTINOVA",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "ARMUTLU",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "CIFTLIKKOY",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "CINARCIK",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "TERMAL",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YALOVA",
+    "ILCE_ADI": "YALOVA_MERKEZ",
+    "cevre_id": "YALOVA"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "AKDAGMADENI",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "AYDINCIK",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "BOGAZLIYAN",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "CANDIR",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "CAYIRALAN",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "CEKEREK",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "KADISEHRI",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "SARAYKENT",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "SARIKAYA",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "SEFAATLI",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "SORGUN",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "YENIFAKILI",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "YERKOY",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "YOZGAT",
+    "ILCE_ADI": "YOZGAT_MERKEZ",
+    "cevre_id": "YOZGAT"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "ALAPLI",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "CAYCUMA",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "DEVREK",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "EREGLI",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "GOKCEBEY",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "KILIMLI",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "KOZLU",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "ZONGULDAK_MERKEZ",
+    "cevre_id": "ZONGULDAK"
+  },
+  {
+    "IL_ADI": "ZONGULDAK",
+    "ILCE_ADI": "ZONGULDAK_MERKEZ___BEYCUMA",
+    "cevre_id": "ZONGULDAK"
+  }
+]

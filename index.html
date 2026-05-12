@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D'Hondt MV Senaryo Dashboard — Türkiye</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      /* ANK-AR sade palet — Tailwind-ish gri-mavi */
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F9FAFB;
+      --bg-tertiary: #F3F4F6;
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --text-tertiary: #9CA3AF;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --accent: #053F6B;   /* ank-ar deep blue */
+      --success: #10B981; --warning: #F59E0B; --danger: #EF4444;
+      --radius-sm: 6px; --radius-md: 8px; --radius-lg: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: var(--font-sans);
+           background: var(--bg-secondary); color: var(--text-primary); margin: 0; padding: 0;
+           font-size: 13px; line-height: 1.5;
+           -webkit-font-smoothing: antialiased; }
+
+    /* Top banner — ANK-AR mavi */
+    .navbar { background: #053f6b;
+               position: sticky; top: 0; z-index: 50; width: 100%;
+               box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .navbar-inner { display: flex; align-items: center; gap: 22px;
+                     margin: 0 auto; width: 100%; max-width: 1500px;
+                     padding: 3px 28px; }
+    .nav-logo-link { display: block; flex-shrink: 0; }
+    .nav-logo-link img { height: 88px; width: auto; display: block; }
+    .nav-divider { width: 1px; height: 60px; background: rgba(255, 255, 255, 0.18);
+                    flex-shrink: 0; }
+    .nav-title-block { flex: 1; color: white; min-width: 0; }
+    .nav-title { font-size: 22px; font-weight: 700; letter-spacing: -0.015em;
+                  line-height: 1.15; color: white;
+                  font-family: var(--font-sans); }
+    .nav-cta { background: rgba(255, 255, 255, 0.95); color: #053f6b;
+                padding: 9px 16px; border-radius: 8px;
+                font-size: 13px; font-weight: 600;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                text-decoration: none; white-space: nowrap;
+                transition: background 0.15s ease, transform 0.15s ease,
+                             box-shadow 0.15s ease;
+                flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+    .nav-cta:hover { background: white; transform: translateY(-1px);
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); }
+    .nav-cta .arrow { font-size: 12px; opacity: 0.65; transition: transform 0.15s ease; }
+    .nav-cta:hover .arrow { transform: translate(2px, -2px); opacity: 0.9; }
+    @media (max-width: 980px) {
+      .nav-cta { padding: 7px 12px; font-size: 12px; }
+    }
+    @media (max-width: 720px) {
+      .navbar-inner { padding: 4px 16px; gap: 14px; }
+      .nav-logo-link img { height: 60px; }
+      .nav-divider { height: 44px; }
+      .nav-title { font-size: 17px; }
+      .nav-cta { display: none; }
+    }
+
+    /* Page header (meta-strip) */
+    .page-header { background: white; border-bottom: 1px solid var(--border-light); padding: 14px 0; }
+    .page-header-inner { max-width: 1500px; margin: 0 auto; padding: 0 14px; }
+    .page-header .meta-strip { display: flex; gap: 16px;
+                                font-size: 12px; color: var(--text-secondary); flex-wrap: wrap;
+                                align-items: center; }
+    .page-header .meta-strip span { display: inline-flex; align-items: center; gap: 4px; }
+    .page-header .meta-strip strong { color: var(--text-primary); font-weight: 600; }
+
+    .container { max-width: 1500px; margin: 0 auto; padding: 14px; }
+    h1 { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
+    h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+    h3 { font-size: 12px; font-weight: 600; margin: 0 0 8px; color: var(--text-secondary);
+         text-transform: uppercase; letter-spacing: 0.05em; }
+    .sub { color: var(--text-secondary); font-size: 12px; margin-bottom: 14px; }
+
+    .card { background: var(--bg-primary); border-radius: var(--radius-lg); padding: 14px;
+            box-shadow: var(--shadow); margin-bottom: 14px; }
+    .hero { background: var(--bg-primary); border-radius: var(--radius-lg); padding: 14px 18px;
+            margin-bottom: 14px; box-shadow: var(--shadow); }
+    .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px;
+            border-radius: 999px; font-size: 12px; font-weight: 500; color: white; }
+    .pill .num { font-weight: 700; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .pill .pct { font-size: 11px; opacity: 0.85; font-variant-numeric: tabular-nums; }
+    .meta-summary { display: flex; gap: 14px; flex-wrap: wrap; }
+    .meta-item { text-align: right; min-width: 70px; }
+    .meta-item .label { font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.3; }
+    .meta-item .value { font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+    .meta-item .sub { font-size: 10px; color: var(--text-tertiary); font-variant-numeric: tabular-nums; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
+                  gap: 8px; margin-top: 10px; padding-top: 10px;
+                  border-top: 1px solid var(--border-light); }
+    .stat-card { background: var(--bg-secondary); padding: 8px 10px; border-radius: var(--radius-sm);
+                  border-top: 2px solid var(--border); text-align: center; }
+    .stat-card.green { border-top-color: var(--success); }
+    .stat-card.red   { border-top-color: var(--danger); }
+    .stat-card.warn  { border-top-color: var(--warning); }
+    .stat-card .label { font-size: 9.5px; color: var(--text-tertiary); text-transform: uppercase;
+                         letter-spacing: 0.05em; line-height: 1.2; margin-bottom: 4px; }
+    .stat-card .value { font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums;
+                         line-height: 1.15; }
+    .stat-card .value .pct { font-size: 11px; color: var(--text-secondary); font-weight: 600; margin-left: 2px; }
+    .stat-card.green .value { color: var(--success); }
+    .stat-card.red .value { color: var(--danger); }
+
+    .layout { display: grid; grid-template-columns: 320px 1fr; gap: 14px; }
+    @media (max-width: 1024px) { .layout { grid-template-columns: 1fr; } }
+
+    /* Controls */
+    .control-row { margin-bottom: 12px; }
+    .control-row label { font-size: 12px; color: var(--text-secondary); font-weight: 500;
+                          display: block; margin-bottom: 4px; }
+    .control-row select, .control-row input[type=number] {
+      width: 100%; padding: 6px 8px; border: 1px solid var(--border);
+      border-radius: var(--radius-sm); font-size: 13px; background: var(--bg-primary);
+    }
+    .map-mode-stack { display: flex; flex-direction: column; gap: 0; margin-bottom: 12px; }
+    .mode-sublabel { font-size: 10.5px; font-weight: 600; color: var(--text-secondary);
+                      text-transform: uppercase; letter-spacing: 0.06em;
+                      margin-bottom: 4px; margin-top: 8px; }
+    .mode-sublabel:first-child { margin-top: 0; }
+    .mode-select { width: 100%; padding: 6px 8px; border: 1px solid var(--border);
+                    border-radius: var(--radius-sm); font-size: 13px;
+                    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                    background: white; color: var(--text-primary); }
+    .mode-select:disabled { background: var(--bg-tertiary); color: var(--text-tertiary);
+                              cursor: not-allowed; opacity: 0.6; }
+
+    .toggle-row { display: flex; gap: 4px; background: var(--bg-secondary); padding: 3px;
+                   border-radius: var(--radius-sm); margin-bottom: 12px; }
+    .toggle-row button { flex: 1; padding: 7px; border: none; background: transparent;
+                          font-size: 12px; font-weight: 500; cursor: pointer; border-radius: 4px;
+                          color: var(--text-secondary); }
+    .toggle-row button.active { background: var(--bg-primary); color: var(--text-primary);
+                                 box-shadow: var(--shadow); }
+
+    .baraj-control { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+    .baraj-control input[type=range] { flex: 1; }
+    .baraj-control .val { width: 40px; text-align: right; font-weight: 600;
+                           font-variant-numeric: tabular-nums; }
+
+    /* Sliders */
+    .slider-row { display: grid; grid-template-columns: 12px 70px 1fr 42px 22px;
+                  gap: 7px; align-items: center; padding: 6px 9px;
+                  background: var(--bg-secondary); border-radius: var(--radius-sm);
+                  margin-bottom: 5px; font-size: 12px; }
+    .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+    .slider-row input[type="range"] { width: 100%; accent-color: var(--accent); }
+    .slider-row .pay { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .slider-row .exempt-cb { display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .slider-row .exempt-cb input { cursor: pointer; accent-color: #b45309; margin: 0; }
+    .slider-row .exempt-cb input:checked + .exempt-badge { color: #b45309; font-weight: 700; }
+    .slider-row label.parti-label { display: flex; align-items: center; gap: 4px; }
+    .exempt-header { display: grid; grid-template-columns: 12px 70px 1fr 42px 22px;
+                      gap: 7px; padding: 4px 9px; font-size: 9.5px; font-weight: 600;
+                      color: var(--text-secondary); text-transform: uppercase;
+                      letter-spacing: 0.04em; }
+    .exempt-header .exempt-col-header { text-align: center; cursor: help; }
+    .toplam-row { display: flex; justify-content: space-between; padding: 7px 10px;
+                   margin-top: 6px; border-top: 1px solid var(--border-light);
+                   font-size: 12px; font-weight: 600; }
+    .baraj-row { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border-light); }
+    .baraj-row label { display: flex; align-items: center; gap: 6px; font-size: 12px;
+                        cursor: pointer; margin-bottom: 5px; }
+
+    /* Run button */
+    .run-btn {
+      width: 100%; padding: 12px; background: var(--accent); color: white;
+      border: none; border-radius: var(--radius-md); font-size: 14px; font-weight: 600;
+      cursor: pointer; margin-top: 12px; transition: opacity 0.15s;
+    }
+    .run-btn:hover { opacity: 0.92; }
+    .run-btn.dirty { background: var(--warning); }
+    .run-btn.dirty::before { content: "● "; }
+
+    /* Map header + info button + modal */
+    .map-header { display: flex; align-items: center; justify-content: space-between;
+                   gap: 10px; margin-bottom: 10px; }
+    .map-header h2 { margin: 0; flex: 1; }
+    .info-btn { width: 28px; height: 28px; border-radius: 50%;
+                 background: #fef3c7; color: #b45309; border: 1.5px solid #fcd34d;
+                 font-weight: 800; font-size: 15px; cursor: pointer; flex-shrink: 0;
+                 display: inline-flex; align-items: center; justify-content: center;
+                 transition: all 0.15s ease; font-family: inherit; line-height: 1; }
+    .info-btn:hover { background: #fde68a; transform: scale(1.08);
+                       box-shadow: 0 2px 6px rgba(180, 83, 9, 0.3); }
+    /* Mini info butonu (h3'lerin yaninda) */
+    .h3-row { display: flex; align-items: center; gap: 6px; margin: 0 0 8px;
+               text-transform: uppercase; letter-spacing: 0.05em;
+               font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+    .h3-row h3 { margin: 0; padding: 0; text-transform: none; letter-spacing: 0;
+                  font-size: inherit; font-weight: inherit; color: inherit; }
+    .mini-info-btn { width: 16px; height: 16px; border-radius: 50%;
+                     background: #fef3c7; color: #b45309; border: 1px solid #fcd34d;
+                     font-weight: 700; font-size: 10px; cursor: pointer;
+                     display: inline-flex; align-items: center; justify-content: center;
+                     transition: all 0.15s ease; line-height: 1; padding: 0; }
+    .mini-info-btn:hover { background: #fde68a; transform: scale(1.15); }
+
+    .warning-banner { background: #fef3c7; border: 1px solid #fcd34d;
+                       border-radius: var(--radius-sm); padding: 8px 12px;
+                       font-size: 12px; color: #92400e; margin-bottom: 10px;
+                       display: flex; align-items: center; gap: 8px; }
+    .warning-banner.hidden { display: none; }
+    .warning-banner .icon { font-weight: 800; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.55);
+                      z-index: 100; display: none; align-items: center;
+                      justify-content: center; padding: 20px; }
+    .modal-overlay.open { display: flex; }
+    .modal { background: white; border-radius: 14px; padding: 24px 28px;
+              max-width: 580px; width: 100%; max-height: 85vh; overflow-y: auto;
+              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative; }
+    .modal h3 { margin: 0 0 10px; font-size: 18px; color: #053f6b;
+                 text-transform: none; letter-spacing: normal; }
+    .modal h4 { font-size: 13px; font-weight: 600; color: var(--text-secondary);
+                 text-transform: uppercase; letter-spacing: 0.06em;
+                 margin: 18px 0 8px; }
+    .modal p { font-size: 13px; line-height: 1.6; color: var(--text-primary);
+                margin: 0 0 10px; }
+    .modal code { background: #f1f5f9; padding: 1px 6px; border-radius: 4px;
+                   font-family: ui-monospace, Menlo, monospace; font-size: 12px;
+                   color: #053f6b; }
+    .modal .formula { background: #f8fafc; border-left: 3px solid #053f6b;
+                       padding: 10px 14px; margin: 8px 0;
+                       font-family: ui-monospace, Menlo, monospace; font-size: 12.5px;
+                       border-radius: 4px; }
+    .modal-close { position: absolute; top: 14px; right: 16px; width: 30px;
+                    height: 30px; border-radius: 50%; background: #f1f5f9;
+                    border: none; cursor: pointer; font-size: 18px;
+                    color: var(--text-secondary); line-height: 1; }
+    .modal-close:hover { background: #e2e8f0; }
+
+    /* Map */
+    .map-wrap { position: relative; width: 100%; aspect-ratio: 16/9;
+                background: var(--bg-secondary); border-radius: var(--radius-md);
+                overflow: hidden; }
+    .map-wrap svg { width: 100%; height: 100%; }
+    .il-shape { stroke: white; stroke-width: 0.5; transition: opacity 0.15s; cursor: pointer; }
+    .il-shape:hover { opacity: 0.7; stroke-width: 1.2; }
+    .map-tooltip { position: absolute; background: rgba(17, 24, 39, 0.96); color: white;
+                    padding: 8px 10px; border-radius: 6px; font-size: 11px;
+                    pointer-events: none; z-index: 100; max-width: 250px; display: none; }
+    .map-tooltip .name { font-weight: 600; margin-bottom: 4px; font-size: 12px; }
+    .map-tooltip .kv { display: flex; justify-content: space-between; gap: 12px; }
+    .map-tooltip .kv .v { font-variant-numeric: tabular-nums; }
+
+    /* Hemicycle */
+    .hemicycle-wrap { text-align: center; padding: 8px 0; }
+    .hemicycle-legend { display: flex; flex-wrap: wrap; gap: 10px;
+                        justify-content: center; margin-top: 8px; font-size: 11px;
+                        color: var(--text-secondary); }
+    .hemicycle-legend .item { display: flex; align-items: center; gap: 5px; }
+    .hemicycle-legend .item strong { color: var(--text-primary); font-weight: 600;
+                                       font-variant-numeric: tabular-nums; }
+
+    /* Charts */
+    .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 1024px) { .charts-row { grid-template-columns: 1fr; } }
+    .chart-wrap { position: relative; width: 100%; height: 260px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border-light); }
+    th { font-weight: 600; color: var(--text-secondary); font-size: 11px;
+         text-transform: uppercase; letter-spacing: 0.04em; background: var(--bg-secondary);
+         position: sticky; top: 0; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .table-wrap { max-height: 320px; overflow-y: auto; }
+    .table-wrap.table-wrap-long { max-height: 720px; }
+    .table-header { display: flex; align-items: center; justify-content: space-between;
+                     gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .table-header h2 { margin: 0; flex: 1; min-width: 200px; }
+    .table-controls { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+    .table-controls select { min-width: 140px; }
+    .margin-pill { display: inline-block; padding: 2px 6px; border-radius: 999px;
+                    font-size: 10px; background: var(--bg-tertiary); color: var(--text-secondary); }
+    .margin-pill.close { background: #FEF3C7; color: #92400E; }
+    .margin-pill.very-close { background: #FCA5A5; color: #7F1D1D; font-weight: 600; }
+
+    .footer { color: var(--text-tertiary); font-size: 11px; margin-top: 10px; text-align: center; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-logo-link" href="https://ank-ar.com/" title="Ana Sayfa">
+      <img src="https://ank-ar.com/static/logo.png" alt="ANK-AR" width="90" height="90">
+    </a>
+    <div class="nav-divider" aria-hidden="true"></div>
+    <div class="nav-title-block">
+      <div class="nav-title">D'Hondt Milletvekili Senaryo Dashboardu</div>
+    </div>
+    <a class="nav-cta" href="https://ank-ar.com/" target="_blank" rel="noopener" title="ANK-AR Mahalle Bazlı Seçim Sonuçları">
+      ANK-AR Mahalle Bazlı Seçim Sonuçları
+      <span class="arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+</nav>
+
+<span id="header-baseline" style="display:none">2023 YSK</span>
+
+<div class="container">
+  <div style="display:none">
+  <h1>D'Hondt MV Senaryo Dashboard</h1>
+  <div class="sub">87 seçim çevresi · 600 MV · uniform proportional swing · baseline 2023 YSK</div>
+  </div>
+
+  <div class="hero">
+    <div class="pills" id="hero-pills"></div>
+  </div>
+
+  <div class="layout">
+
+    <!-- KONTROLLER -->
+    <div>
+
+      <div class="card">
+        <div class="h3-row"><h3>Baseline Seçimi</h3><button class="mini-info-btn" data-control-info="baseline" title="Bilgi">!</button></div>
+        <select id="baseline-select" style="width:100%; padding:6px 8px; border:1px solid var(--border); border-radius:6px; font-size:13px; margin-bottom:12px;">
+          <option value="2023" selected>2023 Milletvekili Genel</option>
+          <option value="2018">2018 Milletvekili Genel</option>
+          <option value="2015k">2015 Kasım Milletvekili Genel</option>
+        </select>
+        <div class="h3-row"><h3>MG Ağırlık Modu</h3><button class="mini-info-btn" data-control-info="mgmode" title="Bilgi">!</button></div>
+        <div class="toggle-row" id="toggle-mg-weight">
+          <button class="active" data-mgmode="tarihsel">Tarihsel (Saadet+YRP)</button>
+          <button data-mgmode="klasik">Klasik Swing</button>
+        </div>
+        <div class="h3-row"><h3>İttifak Modu</h3><button class="mini-info-btn" data-control-info="ittifak" title="Bilgi">!</button></div>
+        <div class="toggle-row" id="toggle-mode">
+          <button class="active" data-mode="birlesik">Birleşik (8 liste)</button>
+          <button data-mode="ayri">Ayrı (11 liste)</button>
+        </div>
+        <div class="h3-row"><h3>Harita Seviyesi</h3><button class="mini-info-btn" data-control-info="seviye" title="Bilgi">!</button></div>
+        <div class="toggle-row" id="toggle-map-level">
+          <button class="active" data-level="il">İl (81)</button>
+          <button data-level="cevre">Çevre (87)</button>
+        </div>
+        <div class="h3-row"><h3>Harita Modu</h3><button class="mini-info-btn" data-control-info="haritamodu" title="Bilgi">!</button></div>
+        <div class="map-mode-stack">
+          <label class="mode-sublabel" for="metric-select">Değişken</label>
+          <select id="metric-select" class="mode-select">
+            <option value="kazanan">Kazanan Parti</option>
+            <option value="oy">Oy Oranı (%)</option>
+            <option value="mv">Milletvekili Sayısı</option>
+            <option value="mvshare">Toplam Milletvekili Oranı (%)</option>
+            <option value="margin">Sonraki Milletvekili için Gerekli Oy (%)</option>
+          </select>
+          <label class="mode-sublabel" for="party-select">Parti</label>
+          <select id="party-select" class="mode-select" disabled></select>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="h3-row"><h3>Senaryo (oy %)</h3><button class="mini-info-btn" data-control-info="senaryo" title="Bilgi">!</button></div>
+        <div class="exempt-header">
+          <span></span><span></span><span></span><span></span>
+          <span class="exempt-col-header" title="Baraj Dışı Tut: işaretliyse parti barajdan muaf">B.D.</span>
+        </div>
+        <div id="sliders"></div>
+        <div class="toplam-row"><span>Toplam</span><span id="toplam">100.0%</span></div>
+        <div class="baraj-row">
+          <div class="h3-row"><h3>Baraj</h3><button class="mini-info-btn" data-control-info="baraj" title="Bilgi">!</button></div>
+          <div class="baraj-control">
+            <input type="range" id="baraj-slider" min="0" max="15" step="0.5" value="7">
+            <span class="val" id="baraj-val">%7</span>
+          </div>
+          <p style="font-size:11px; color:var(--text-secondary); margin:6px 0 0; line-height:1.4;">
+            Baraj dışı tutmak istediğin partileri yukarıda senaryo satırlarındaki <strong>B.D.</strong> kutusundan işaretle.
+          </p>
+        </div>
+        <button class="run-btn" id="run-btn">▶ Simülasyonu Çalıştır</button>
+      </div>
+
+    </div>
+
+    <!-- ANA -->
+    <div>
+
+      <div class="card">
+        <div class="map-header">
+          <h2 id="map-title">Türkiye — Kazanan Parti (İl Bazlı)</h2>
+          <button class="info-btn" id="info-btn" title="Bu metrik nasıl hesaplanıyor?" aria-label="Yöntem hakkında bilgi">!</button>
+        </div>
+        <div class="warning-banner hidden" id="warning-banner">
+          <span class="icon">⚠</span>
+          <span id="warning-text"></span>
+        </div>
+        <div class="map-wrap">
+          <svg id="map" viewBox="0 0 800 380" preserveAspectRatio="xMidYMid meet"></svg>
+          <div class="map-tooltip" id="map-tooltip"></div>
+        </div>
+      </div>
+
+      <div class="charts-row">
+        <div class="card">
+          <h2>Oy vs Koltuk Oranı</h2>
+          <div class="chart-wrap"><canvas id="comparison-chart"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Meclis Dağılımı (600 koltuk)</h2>
+          <div class="hemicycle-wrap">
+            <svg id="hemicycle" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet"
+                 style="width:100%;max-height:300px;"></svg>
+            <div class="hemicycle-legend" id="hemicycle-legend"></div>
+          </div>
+        </div>
+      </div>
+
+<!-- Tablo kaldirildi (yoldas istegi) -->
+
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Yontem aciklama modal -->
+<div class="modal-overlay" id="info-modal" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Kapat">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script type="module">
+import { Pipeline } from 'js/dhondt-pipeline.js';
+
+const ASCII_MAP = { 'Â':'A','Ç':'C','Ğ':'G','İ':'I','I':'I','Ö':'O','Ş':'S','Ü':'U',
+                    'â':'a','ç':'c','ğ':'g','ı':'i','î':'i','ö':'o','ş':'s','ü':'u','û':'u' };
+function ilKey(name) {
+  let r = ''; for (const ch of name) r += (ASCII_MAP[ch] ?? ch);
+  r = r.toUpperCase();
+  if (r === 'AFYON') r = 'AFYONKARAHISAR';
+  return r;
+}
+
+let motor, ilGeo, cevreGeo;
+let mode = 'birlesik';
+let mapLevel = 'il';
+let baselineYear = '2023';
+let mgWeightMode = 'tarihsel';
+let values = {};
+let exempt = ['MHP', 'SOL'];
+let barajPct = 7;
+let focus = 'kazanan';
+let lastSonuc = null;
+let comparisonChart;
+let dirty = false;
+
+try {
+  motor = await Pipeline.load('data');
+  const [g1, g2] = await Promise.all([
+    fetch('data/turkey_il.geojson').then(r => r.json()),
+    fetch('data/turkey_cevre.geojson').then(r => r.json())
+  ]);
+  ilGeo = g1; cevreGeo = g2;
+  for (const f of ilGeo.features) f.properties.KEY = ilKey(f.properties.name);
+  for (const f of cevreGeo.features) f.properties.KEY = f.properties.cevre_id;
+} catch (e) {
+  document.body.innerHTML = '<h1 style="color:#DC2626">Veri yüklenemedi</h1><pre>' + e.message + '</pre>';
+  throw e;
+}
+
+const PARTI_AD = {
+  CHP: 'CHP', AKP: 'AK Parti', MHP: 'MHP',
+  MI: 'Milliyetçi İttifak', MG: 'Milli Görüş İttifakı',
+  DEM: 'DEM', SOL: 'Sol İttifak', DIGER: 'Diğer',
+  IYI: 'İYİ Parti', ZAFER: 'Zafer Partisi', MEMLEKET: 'Memleket Partisi',
+  YRP: 'Yeniden Refah', SAADET: 'Saadet Partisi'
+};
+// SOL Ittifak rengi pembe (CHP kirmizisindan ayri)
+const RENK_BIRLESIK = { ...motor.meta.renkler, SOL: '#EC4899' };
+const RENK_AYRI = { ...motor.meta.renkler_ayri, SOL: '#EC4899' };
+
+function partiler() { return mode === 'birlesik' ? motor.meta.partiler : motor.meta.partiler_ayri; }
+function renkler() { return mode === 'birlesik' ? RENK_BIRLESIK : RENK_AYRI; }
+function defaultSenaryo() {
+  return mode === 'birlesik' ? motor.meta.default_senaryo : motor.meta.default_senaryo_ayri;
+}
+
+// === SLIDER'LARI KUR ===
+function rebuildSliders() {
+  values = { ...defaultSenaryo() };
+  const wrap = document.getElementById('sliders');
+  wrap.innerHTML = '';
+  // Default exempt partileri
+  const DEFAULT_EXEMPT = new Set(['MHP', 'SOL']);
+  for (const p of partiler()) {
+    const row = document.createElement('div');
+    row.className = 'slider-row';
+    const isExempt = DEFAULT_EXEMPT.has(p);
+    row.innerHTML = `
+      <span class="swatch" style="background:${renkler()[p]}"></span>
+      <label class="parti-label">${PARTI_AD[p]}</label>
+      <input type="range" min="0" max="40" step="0.1" value="${values[p]}" data-parti="${p}">
+      <span class="pay" id="pay-${p}">${values[p].toFixed(1)}%</span>
+      <label class="exempt-cb" title="${PARTI_AD[p]} baraj dışı tut">
+        <input type="checkbox" data-exempt="${p}" ${isExempt ? 'checked' : ''}>
+      </label>
+    `;
+    wrap.appendChild(row);
+  }
+  updateToplam();
+  // Harita modu — iki dropdown (Değişken + Parti) alt alta
+  const partySel = document.getElementById('party-select');
+  const prevParty = partySel.value;
+  partySel.innerHTML = '';
+  for (const p of partiler()) {
+    const opt = document.createElement('option');
+    opt.value = p;
+    opt.textContent = PARTI_AD[p];
+    partySel.appendChild(opt);
+  }
+  // Onceki parti hala mevcutsa secimi koru
+  if (prevParty && partiler().includes(prevParty)) partySel.value = prevParty;
+  syncFocusFromDropdowns(false);
+
+}
+
+function syncFocusFromDropdowns(triggerRender = true) {
+  const metric = document.getElementById('metric-select').value;
+  const partySel = document.getElementById('party-select');
+  if (metric === 'kazanan') {
+    focus = 'kazanan';
+    partySel.disabled = true;
+  } else {
+    focus = partySel.value + ':' + metric;
+    partySel.disabled = false;
+  }
+  if (triggerRender && lastSonuc) renderAll(lastSonuc);
+}
+
+function updateToplam() {
+  let t = 0; for (const p of partiler()) t += values[p];
+  const el = document.getElementById('toplam');
+  el.textContent = t.toFixed(1) + '%';
+  el.style.color = Math.abs(t - 100) < 0.5 ? 'var(--success)' : 'var(--danger)';
+}
+
+function markDirty() {
+  dirty = true;
+  document.getElementById('run-btn').classList.add('dirty');
+  document.getElementById('run-btn').textContent = '● Yeniden Çalıştır';
+}
+
+document.getElementById('sliders').addEventListener('input', e => {
+  const p = e.target.dataset.parti;
+  if (!p) return;
+  values[p] = parseFloat(e.target.value);
+  document.getElementById('pay-' + p).textContent = values[p].toFixed(1) + '%';
+  updateToplam();
+  markDirty();
+});
+
+// === BARAJ ===
+document.getElementById('baraj-slider').addEventListener('input', e => {
+  barajPct = parseFloat(e.target.value);
+  document.getElementById('baraj-val').textContent = '%' + barajPct;
+  markDirty();
+});
+
+// === EXEMPT toggles (slider satirlarinda checkbox) ===
+function readExempt() {
+  exempt = [];
+  document.querySelectorAll('#sliders input[type=checkbox][data-exempt]').forEach(cb => {
+    if (cb.checked) exempt.push(cb.dataset.exempt);
+  });
+}
+// Slider rebuild olunca yeni checkbox'lar gelir, event delegation kullaniyoruz
+document.getElementById('sliders').addEventListener('change', (e) => {
+  if (e.target.matches('input[type=checkbox][data-exempt]')) {
+    readExempt();
+    markDirty();
+  }
+});
+
+// === Mode toggle ===
+document.querySelectorAll('#toggle-mode button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#toggle-mode button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    mode = btn.dataset.mode;
+    rebuildSliders();
+    readExempt();
+    recalc();
+  });
+});
+
+// === Baseline secimi ===
+document.getElementById('baseline-select').addEventListener('change', async (e) => {
+  baselineYear = e.target.value;
+  const btn = document.getElementById('run-btn');
+  btn.textContent = '⏳ Baseline yükleniyor...';
+  btn.disabled = true;
+  try {
+    await motor.setBaseline(baselineYear, '../data');
+    const label = { '2023': '2023 YSK', '2018': '2018 YSK', '2015k': '2015 Kasım YSK' }[baselineYear] || baselineYear;
+    document.getElementById('header-baseline').textContent = label;
+    recalc();
+  } catch (err) {
+    alert('Baseline yüklenemedi: ' + err.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+// === MG agirlik modu ===
+document.querySelectorAll('#toggle-mg-weight button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#toggle-mg-weight button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    mgWeightMode = btn.dataset.mgmode;
+    recalc();
+  });
+});
+
+// === Map level toggle ===
+document.querySelectorAll('#toggle-map-level button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#toggle-map-level button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    mapLevel = btn.dataset.level;
+    setupMapPaths();
+    if (lastSonuc) renderAll(lastSonuc);
+  });
+});
+
+// === Harita modu — iki dropdown (Değişken + Parti) ===
+document.getElementById('metric-select').addEventListener('change', () => syncFocusFromDropdowns(true));
+document.getElementById('party-select').addEventListener('change', () => syncFocusFromDropdowns(true));
+
+// (Tablo dropdown'lari kaldirildi)
+
+// === Info butonu + Modal ===
+const METRIK_BILGI = {
+  kazanan: {
+    baslik: 'Kazanan Parti — Harita Modu',
+    aciklama: `Her il/cevrenin <strong>en cok milletvekili kazanan</strong> partisini gosterir. Aynı sayıda MV alan partiler arasında D'Hondt sırası ilk olana atanir.`,
+    formula: `kazanan(bolge) = argmax<sub>parti</sub> ( MV<sub>parti, bolge</sub> )`,
+    yontem: `Önce 87 secim cevresine D'Hondt yontemiyle 600 MV dağıtılır, sonra her bolge icin "kazanan" = en cok MV alan parti. <strong>İl seviyesi</strong> seçilirse Istanbul/Ankara/Izmir/Bursa'nın 10 cevresi il toplamı altında birleştirilir.`
+  },
+  oy: {
+    baslik: 'Oy Oranı (%) — Harita Modu',
+    aciklama: `Partinin secili bolgede aldığı <strong>gerçek oy yuzdesini</strong> gosterir (D'Hondt allokasyonu degil — sandıktan cıkan ham oy).`,
+    formula: `oy_oranı(parti, bolge) = ( parti_oy<sub>bolge</sub> / gecerli_oy<sub>bolge</sub> ) × 100`,
+    yontem: `Senaryo girdileri (her parti icin ulkesel oy %) bolgesel paylara <strong>uniform proportional swing</strong> ile çevrilir: <code>ilce_yeni_pay = ilce_baseline_pay × (senaryo_ulke / baseline_ulke)</code>. Milli Görüş ittifaki icin secime gore Tarihsel (Saadet+YRP ortalaması) veya Klasik (2023 baseline orantili) ağırlık.`
+  },
+  mv: {
+    baslik: 'Milletvekili Sayısı — Harita Modu',
+    aciklama: `Partinin secili bolgede <strong>D'Hondt yontemiyle kazandığı milletvekili sayısını</strong> gosterir. Toplam 600 MV, 87 cevreye dağıtılır.`,
+    formula: `MV(parti, cevre) = D'Hondt(parti_oy<sub>cevre</sub>, cevre_MV_kontenjanı)`,
+    yontem: `D'Hondt: her parti icin oy / (1, 2, 3, ...) bolumleri hesaplanir, en buyuk kontenjan sayisi kadar bolumler MV verir. Baraj %7 ulkesel (MHP ve Sol İttifak baraj-muaf default). İl seviyesi modunda Istanbul/Ankara/Izmir/Bursa cevre MV'leri toplanir.`
+  },
+  mvshare: {
+    baslik: 'Toplam Milletvekili Oranı (%) — Harita Modu',
+    aciklama: `Partinin <strong>bolgenin toplam MV'sine oranını</strong> gosterir. Yani o cevreden cıkan milletvekillerinin yuzde kacı bu partiye gitti.`,
+    formula: `MV_orani(parti, bolge) = ( MV<sub>parti</sub> / toplam_MV<sub>bolge</sub> ) × 100`,
+    yontem: `Bolgenin MV kontenjani sabittir (Istanbul-1: 35 MV, Adana: 14 MV vs.). D'Hondt sonrasi partilerin aldığı koltuk sayısı bu kontenjana bolunur. <strong>Oy Oranı'ndan farklı</strong>: D'Hondt buyuk partileri orantısız ödüllendirir, ufak partilerin oyları "boşa gider" — bu yuzden MV oranı genelde oy oranından yuksek/dusuk çıkar.`
+  },
+  margin: {
+    baslik: 'Sonraki MV için Gerekli Oy (%) — Harita Modu',
+    aciklama: `Partinin secili bolgede <strong>bir sonraki D'Hondt turunda MV alabilmek icin ne kadar ek oy gerektigini</strong> gosterir (gecerli oyun yuzdesi olarak).`,
+    formula: `margin = ( ihtiyac_duyulan_ek_oy / gecerli_oy<sub>bolge</sub> ) × 100`,
+    yontem: `D'Hondt turlari bittikten sonra her partinin "son turda devre dışı kaldığı bolum" hesabıyla — parti son MV'yi alabilmek icin kontenjanın altında kalan oy oranı. Cevre seviyesinde hesaplanir; il modunda en yakın cevrenin margin'i gosterilir. <strong>—</strong> isareti = parti bolgede aday degil veya zaten max MV almis.`
+  }
+};
+
+function openInfoModal() {
+  const metric = document.getElementById('metric-select').value;
+  const partySel = document.getElementById('party-select');
+  const parti = metric === 'kazanan' ? null : partySel.value;
+  const bilgi = METRIK_BILGI[metric];
+  const partyTag = parti ? `<strong style="color:${renkler()[parti]}">${PARTI_AD[parti]}</strong> — ` : '';
+  const html = `
+    <h3>${partyTag}${bilgi.baslik}</h3>
+    <p>${bilgi.aciklama}</p>
+    <h4>Formul</h4>
+    <div class="formula">${bilgi.formula}</div>
+    <h4>Hesap Yöntemi</h4>
+    <p>${bilgi.yontem}</p>
+    <h4>Genel Pipeline</h4>
+    <p>Senaryo (ulkesel oy %) → <code>uniform swing</code> → ilce dağıtımı → 87 cevre toplamı →
+       <code>D'Hondt</code> (baraj %${barajPct}, MHP/Sol exempt) → 600 MV → il agregati.
+       Baseline secimi: <code>${document.getElementById('baseline-select').value}</code>,
+       Ittifak modu: <code>${mode}</code>, MG ağırlık: <code>${mgWeightMode}</code>.</p>
+  `;
+  document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('info-modal').classList.add('open');
+}
+
+document.getElementById('info-btn').addEventListener('click', openInfoModal);
+
+// === Kontrol panelindeki "!" bilgi butonlari ===
+const KONTROL_BILGI = {
+  baseline: {
+    baslik: 'Baseline Seçimi',
+    aciklama: `Senaryo hesabının başlangıç noktası olan <strong>geçmiş seçim verilerini</strong> seçer. Senaryodaki ulkesel oy yüzdeleri bu baseline'a göre ilçelere dağıtılır.`,
+    detay: `<strong>2023 Milletvekili Genel:</strong> En güncel ve en kapsamlı. Tüm partiler dahil (CHP, AKP, MHP, İYİ, ZAFER, MEMLEKET, YRP, SAADET, YSP, TİP). <strong>Default seçim.</strong>
+    <br><br><strong>2018:</strong> SOL ittifak (TİP) yok, YRP yok. Bu partilerin oyları her ilçeye uniform dağıtılır (warning gözükür).
+    <br><br><strong>2015 Kasım:</strong> İYİ Parti, ZAFER, MEMLEKET, YRP yok. Eski coğrafi yapı (Saadet hala vardı). Tarihsel karşılaştırma için.`
+  },
+  mgmode: {
+    baslik: 'MG (Milli Görüş) Ağırlık Modu',
+    aciklama: `Milli Görüş İttifakı (YRP + Saadet) oyunun ilçelere nasıl dağıtılacağını belirler. Sadece MG için geçerli; diğer 7 parti her iki modda da aynı klasik swing kullanır.`,
+    detay: `<strong>Tarihsel (Saadet+YRP):</strong> Saadet 2015 Kasım + Saadet 2018 + YRP 2023 oranlarının ortalamasını her ilçenin "MG ağırlığı" olarak alır, ulke ortalamasıyla normalize eder. Konya, Aksaray, Düzce gibi Saadet kalelerinde MG yığılır → D'Hondt'ta MV alabilir. <strong>Mert'in tercihi, default.</strong>
+    <br><br><strong>Klasik Swing:</strong> MG için ilçe baseline'ı YRP+SAADET 2023 olarak alır, ulkesel swing katsayısıyla çarpar. Daha düz dağılım, hiçbir cevrede yoğunlaşmaz → D'Hondt'ta zor MV alır.`
+  },
+  ittifak: {
+    baslik: 'İttifak Modu',
+    aciklama: `Partilerin <strong>ittifak listesi mi yoksa ayrı listeler mi</strong> sunduğunu belirler. D'Hondt hesabı çevre bazında bu listelere göre yapılır.`,
+    detay: `<strong>Birleşik (8 liste):</strong> Milliyetçi İttifak (İYİ + ZAFER + MEMLEKET) ve Milli Görüş (YRP + SAADET) tek liste gibi D'Hondt'a girer. MV sonra ittifak içi alt-D'Hondt ile dağıtılır. Yoldas tercihi — gerçek 2023 ittifak yapısı.
+    <br><br><strong>Ayrı (11 liste):</strong> İYİ, ZAFER, MEMLEKET, YRP, SAADET hepsi solo listeyle D'Hondt'a girer. Daha çok küçük parti baraj altı kalır, MV dağılımı dengeleniyor.`
+  },
+  seviye: {
+    baslik: 'Harita Seviyesi',
+    aciklama: `Haritanın hangi <strong>idari birim seviyesinde</strong> gösterileceğini ayarlar. D'Hondt hesabı her zaman 87 secim cevresine yapılır; il seviyesi sadece görsel agregasyondur.`,
+    detay: `<strong>İl (81):</strong> Istanbul (98 MV, 3 çevre), Ankara (36 MV, 3 çevre), İzmir (28 MV, 2 çevre), Bursa (20 MV, 2 çevre) çevre MV'leri il toplamı altında birleştirilir. Türkiye genel resmini gösterir.
+    <br><br><strong>Çevre (87):</strong> Her seçim çevresi ayrı gösterilir. Multi-cevre illerde (Istanbul-1, Ankara-2 vs.) detay görünür. D'Hondt orijinal çıktı.`
+  },
+  haritamodu: {
+    baslik: 'Harita Modu',
+    aciklama: `Haritada her bölgeyi <strong>hangi metriğe göre</strong> renklendireceğini ve hangi parti için göstereceğini belirler.`,
+    detay: `<strong>Değişken (metrik):</strong>
+    <br>• <strong>Kazanan Parti:</strong> Bölgenin en çok MV alan partisinin rengi
+    <br>• <strong>Oy Oranı (%):</strong> Partinin sandıktan aldığı gerçek oy yüzdesi
+    <br>• <strong>Milletvekili Sayısı:</strong> Partinin kazandığı ham MV sayısı
+    <br>• <strong>Toplam Milletvekili Oranı (%):</strong> Parti MV / bölgenin toplam MV'si × 100
+    <br>• <strong>Sonraki Milletvekili için Gerekli Oy (%):</strong> +1 MV için ne kadar ek oy gerek
+    <br><br><strong>Parti:</strong> Yukarıdaki 4 parti-spesifik metrik için hangi partiyi göstereceğin. "Kazanan Parti" seçildiyse parti dropdown'u devre dışıdır.`
+  },
+  senaryo: {
+    baslik: 'Senaryo (Oy %)',
+    aciklama: `Senaryonun temel girdileri: her partinin <strong>ulkesel oy yüzdesi</strong>. Slider'larla ayarlanır, anlık olarak D'Hondt hesabını tetikler. Toplam ~%100 olmalı (otomatik normalize edilir).`,
+    detay: `Slider'lar 0-40% arası, 0.1% adımlı. Toplam %100'den sapsa sistem otomatik normalize eder ama görseldeki "Toplam" göstergesi yeşilse iyi, kırmızıysa düzeltmek gerekir.
+    <br><br>Senaryo girdileri <strong>ulkesel oran</strong>'dır; ilçe dağılımı seçili baseline coğrafyasına göre <strong>uniform proportional swing</strong> ile yapılır: <code>ilce_yeni_pay = ilce_baseline_pay × (senaryo_ulke / baseline_ulke)</code>.
+    <br><br>Mert'in default senaryosu: CHP 29.1, AKP 25.4, MHP 5.9, MI 17.6, MG 10, DEM 9, SOL 2, DIGER 1.2.`
+  },
+  baraj: {
+    baslik: 'Baraj',
+    aciklama: `<strong>Ulkesel seçim barajı yüzdesi</strong>. Baraj altında kalan partiler D'Hondt'a katılmaz, oy verilirse "boşa gider".`,
+    detay: `<strong>Baraj %:</strong> 0-15% arası, 0.5% adımlı (default %7 — 2023 yasası).
+    <br><br><strong>Baraj Dışı Tut (B.D.):</strong> Her parti için Senaryo (oy %) bölümündeki slider satırının sağında <strong>B.D.</strong> kutusu vardır. İşaretli partiler ülkesel baraj testinden muaf olur — Cumhur İttifakı'ndaki MHP, ittifak listesindeki Sol İttifak gibi durumlar için kullanılır.
+    <br><br><strong>Default işaretli:</strong> MHP (Cumhur mantığı) ve SOL İttifakı. Ayrı (11 liste) modunda istersen YRP, Saadet için de aç.`
+  }
+};
+
+function openControlInfoModal(key) {
+  const bilgi = KONTROL_BILGI[key];
+  if (!bilgi) return;
+  document.getElementById('modal-body').innerHTML = `
+    <h3>${bilgi.baslik}</h3>
+    <p>${bilgi.aciklama}</p>
+    <h4>Detay</h4>
+    <p style="line-height:1.7;">${bilgi.detay}</p>
+  `;
+  document.getElementById('info-modal').classList.add('open');
+}
+document.querySelectorAll('.mini-info-btn[data-control-info]').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openControlInfoModal(btn.dataset.controlInfo);
+  });
+});
+document.getElementById('modal-close').addEventListener('click', () => {
+  document.getElementById('info-modal').classList.remove('open');
+});
+document.getElementById('info-modal').addEventListener('click', (e) => {
+  if (e.target.id === 'info-modal') document.getElementById('info-modal').classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.getElementById('info-modal').classList.remove('open');
+});
+
+// === Run button ===
+document.getElementById('run-btn').addEventListener('click', recalc);
+
+// === MAP ===
+const mapSvg = d3.select('#map');
+const tooltip = document.getElementById('map-tooltip');
+
+let mapProjection, mapPath;
+function setupMapPaths() {
+  mapSvg.selectAll('*').remove();
+  const geo = mapLevel === 'il' ? ilGeo : cevreGeo;
+  mapProjection = d3.geoMercator().fitSize([800, 380], geo);
+  mapPath = d3.geoPath().projection(mapProjection);
+  // Sekiller (alta)
+  const shapeG = mapSvg.append('g').attr('class', 'shapes');
+  shapeG.selectAll('path.il-shape')
+    .data(geo.features)
+    .enter()
+    .append('path')
+    .attr('class', 'il-shape')
+    .attr('d', mapPath)
+    .attr('fill', '#D1D5DB')
+    .on('mousemove', (e, f) => showTooltip(e, f))
+    .on('mouseout', () => { tooltip.style.display = 'none'; });
+  // Label pozisyonu — polygon icindeki "gorsel merkez" (uzun illerde Antalya gibi
+  // centroid kiyiya/denize duser; bbox center daha icerikte)
+  const tmpSvgNs = 'http://www.w3.org/2000/svg';
+  function bestLabelPoint(feature) {
+    const centroid = mapPath.centroid(feature);
+    const bounds = mapPath.bounds(feature);
+    const bboxC = [(bounds[0][0] + bounds[1][0]) / 2, (bounds[0][1] + bounds[1][1]) / 2];
+    if (!isFinite(centroid[0])) return bboxC;
+    // d3.geoContains ile centroid icerisini test et
+    let useCentroid = true;
+    try {
+      const geo = mapProjection.invert(centroid);
+      if (geo && !d3.geoContains(feature, geo)) useCentroid = false;
+    } catch (e) {}
+    if (useCentroid) {
+      // Centroid bbox cetrerine yakinsa (kompakt sekil) centroid kullan
+      const dx = centroid[0] - bboxC[0], dy = centroid[1] - bboxC[1];
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      const diag = Math.sqrt((bounds[1][0]-bounds[0][0])**2 + (bounds[1][1]-bounds[0][1])**2);
+      // Centroid bbox merkezinden ciok uzaksa (uzun, ince sekil) bbox merkezini dene
+      if (dist > diag * 0.25) {
+        try {
+          const bboxGeo = mapProjection.invert(bboxC);
+          if (bboxGeo && d3.geoContains(feature, bboxGeo)) return bboxC;
+        } catch (e) {}
+      }
+      return centroid;
+    }
+    return bboxC;
+  }
+
+  // Label katmani (ustte)
+  const labelG = mapSvg.append('g').attr('class', 'labels').attr('pointer-events', 'none');
+  for (const f of geo.features) {
+    const c = bestLabelPoint(f);
+    if (!isFinite(c[0]) || !isFinite(c[1])) continue;
+    labelG.append('text')
+      .attr('class', 'il-label')
+      .attr('data-key', f.properties.KEY)
+      .attr('x', c[0]).attr('y', c[1])
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'middle')
+      .attr('font-size', mapLevel === 'il' ? 8 : 7)
+      .attr('font-weight', 700)
+      .attr('fill', '#374151')
+      .attr('stroke', 'white').attr('stroke-width', 1.4)
+      .attr('paint-order', 'stroke fill')
+      .text('');
+  }
+}
+
+function showTooltip(e, f) {
+  if (!lastSonuc) return;
+  const key = f.properties.KEY;
+  const rows = mapLevel === 'il' ? lastSonuc.il : lastSonuc.cevre;
+  const row = rows.find(r => (mapLevel === 'il' ? r.il : r.cevre_id) === key);
+  if (!row) return;
+  let html = `<div class="name">${mapLevel === 'il' ? f.properties.name : (row.cevre_adi || key)}</div>`;
+  html += `<div class="kv"><span>MV</span><span class="v">${row.mv}</span></div>`;
+  html += `<div class="kv"><span>Kazanan</span><span class="v" style="color:${renkler()[row.kazanan]}">${PARTI_AD[row.kazanan]}</span></div>`;
+  for (const p of partiler()) {
+    if (!row[p]) continue;
+    html += `<div class="kv" style="color:${renkler()[p]}"><span>${PARTI_AD[p]}</span><span class="v">${row[p]}</span></div>`;
+  }
+  // Margin info: en yakın "+1 MV"
+  if (row.margins) {
+    const closest = Object.entries(row.margins)
+      .filter(([p, m]) => m.needPct !== null && m.needPct > 0)
+      .sort((a, b) => a[1].needPct - b[1].needPct)
+      .slice(0, 2);
+    if (closest.length > 0) {
+      html += `<div style="border-top:1px solid #444; margin-top:4px; padding-top:4px; font-size:10px;">En yakın +1 MV:</div>`;
+      for (const [p, m] of closest) {
+        html += `<div class="kv" style="font-size:10px"><span style="color:${renkler()[p]}">${PARTI_AD[p]}</span><span class="v">+${m.needPct}%</span></div>`;
+      }
+    }
+  }
+  tooltip.innerHTML = html;
+  tooltip.style.display = 'block';
+  const wrap = document.querySelector('.map-wrap').getBoundingClientRect();
+  tooltip.style.left = (e.clientX - wrap.left + 12) + 'px';
+  tooltip.style.top = (e.clientY - wrap.top + 12) + 'px';
+}
+
+// === RENDER ===
+function renderAll(sonuc) {
+  // Hero pills (MV + pay %)
+  const heroPills = document.getElementById('hero-pills');
+  heroPills.innerHTML = '';
+  // MV'ye gore sirala (buyukten kucuge), 0 olanlari at
+  const ranked = [...sonuc.toplam].filter(r => r.mv > 0).sort((a, b) => b.mv - a.mv);
+  for (const r of ranked) {
+    const pill = document.createElement('span');
+    pill.className = 'pill';
+    pill.style.background = renkler()[r.parti];
+    pill.innerHTML = `${PARTI_AD[r.parti]} <span class="num">${r.mv}</span> <span class="pct">%${r.mv_pct.toFixed(1)}</span>`;
+    heroPills.appendChild(pill);
+  }
+
+  // (stat-grid kaldirildi — yoldas isteği uzerine)
+
+  // Map
+  const rowMap = mapLevel === 'il'
+    ? new Map(sonuc.il.map(r => [r.il, r]))
+    : new Map(sonuc.cevre.map(r => [r.cevre_id, r]));
+  const rows = mapLevel === 'il' ? sonuc.il : sonuc.cevre;
+  const mapTitle = document.getElementById('map-title');
+  const levelLabel = mapLevel === 'il' ? 'İl' : 'Çevre';
+
+  const ZERO_COLOR = '#D1D5DB';  // 0 olan iller icin gri (gozukur)
+
+  // Focus parse: "kazanan" | "{PARTI}:oy" | "{PARTI}:mv" | "{PARTI}:margin"
+  let focusType = focus;
+  let focusParti = null;
+  if (focus.includes(':')) {
+    const parts = focus.split(':');
+    focusParti = parts[0];
+    focusType = parts[1];
+  }
+
+  // Renkleme + label hesap fonksiyonu
+  function valueFor(row, type, parti) {
+    if (!row) return null;
+    if (type === 'oy') {
+      // Gercek oy orani: parti oy / gecerli oy
+      if (!row.votes || !row.gecerli) return null;
+      return (100 * (row.votes[parti] || 0)) / row.gecerli;
+    }
+    if (type === 'mv') {
+      return row[parti] || 0;
+    }
+    if (type === 'mvshare') {
+      // Toplam MV orani: parti MV / bolgenin toplam MV
+      if (row.mv === 0) return null;
+      return (100 * (row[parti] || 0)) / row.mv;
+    }
+    if (type === 'margin') {
+      if (!row.margins || !row.margins[parti]) return null;
+      const m = row.margins[parti];
+      return m.needPct === null ? null : m.needPct;
+    }
+    return null;
+  }
+
+  function labelFor(row, type, parti) {
+    if (!row) return '';
+    if (type === 'oy') {
+      if (!row.votes || !row.gecerli) return '—';
+      const v = (100 * (row.votes[parti] || 0)) / row.gecerli;
+      return v >= 1 ? v.toFixed(0) + '%' : v.toFixed(1) + '%';
+    }
+    if (type === 'mv') {
+      return String(row[parti] || 0);
+    }
+    if (type === 'mvshare') {
+      if (row.mv === 0) return '0%';
+      const v = (100 * (row[parti] || 0)) / row.mv;
+      return v >= 1 ? v.toFixed(0) + '%' : v.toFixed(1) + '%';
+    }
+    if (type === 'margin') {
+      if (!row.margins || !row.margins[parti]) return '—';
+      const m = row.margins[parti];
+      if (m.needPct === null) return '—';
+      if (m.needPct === 0) return '0';
+      return '+' + m.needPct.toFixed(m.needPct < 1 ? 1 : 0) + '%';
+    }
+    return '';
+  }
+
+  if (focusType === 'kazanan') {
+    mapTitle.textContent = `Türkiye — Kazanan Parti (${levelLabel} Bazlı)`;
+    mapSvg.selectAll('path.il-shape')
+      .attr('fill', d => {
+        const r = rowMap.get(d.properties.KEY);
+        return r ? renkler()[r.kazanan] : ZERO_COLOR;
+      });
+    // Kazanan modunda label gosterme (yoldas istegi)
+    mapSvg.selectAll('text.il-label').text('');
+  } else {
+    const titleMap = { oy: 'Oy Oranı (%)', mv: 'MV Sayısı', mvshare: 'Toplam MV Oranı (%)', margin: '+1 MV için Gerekli Oy (%)' };
+    mapTitle.textContent = `Türkiye — ${PARTI_AD[focusParti]} ${levelLabel} Bazlı ${titleMap[focusType]}`;
+
+    // Renk skalasi
+    const values = rows.map(r => valueFor(r, focusType, focusParti)).filter(v => v !== null && v >= 0);
+    const maxV = focusType === 'margin'
+      ? d3.quantile(values.sort((a,b)=>a-b), 0.9) || d3.max(values) || 1   // margin: 90 percentile (cok yuksek deg outlier'lari kis)
+      : d3.max(values) || 1;
+    const partiRenk = renkler()[focusParti];
+    let color;
+    if (focusType === 'margin') {
+      // Margin: kucuk deger = parti rengi (yakin), buyuk deger = gri (uzak)
+      color = d3.scaleLinear().domain([0, maxV]).range([partiRenk, '#F3F4F6']).clamp(true);
+    } else {
+      // Oy / MV: kucuk = beyaz, buyuk = parti rengi koyu
+      color = d3.scaleLinear().domain([0, maxV]).range(['#FFFFFF', partiRenk]).clamp(true);
+    }
+
+    mapSvg.selectAll('path.il-shape')
+      .attr('fill', d => {
+        const r = rowMap.get(d.properties.KEY);
+        if (!r) return ZERO_COLOR;
+        const v = valueFor(r, focusType, focusParti);
+        if (v === null) return ZERO_COLOR;
+        // 0 oy/MV durumunda gozukur gri
+        if ((focusType === 'oy' || focusType === 'mv') && v === 0) return ZERO_COLOR;
+        return color(v);
+      });
+
+    // Label
+    mapSvg.selectAll('text.il-label').nodes().forEach(node => {
+      const key = node.getAttribute('data-key');
+      const r = rowMap.get(key);
+      if (!r) { node.textContent = ''; return; }
+      node.textContent = labelFor(r, focusType, focusParti);
+      const v = valueFor(r, focusType, focusParti);
+      // Text rengi luminance bazli
+      let bgC;
+      if (v === null || ((focusType === 'oy' || focusType === 'mv') && v === 0)) {
+        bgC = d3.color(ZERO_COLOR);
+      } else {
+        bgC = d3.color(color(v));
+      }
+      const lum = bgC ? (0.299 * bgC.r + 0.587 * bgC.g + 0.114 * bgC.b) / 255 : 1;
+      node.setAttribute('fill', lum < 0.55 ? 'white' : '#111827');
+      node.setAttribute('stroke', lum < 0.55 ? 'rgba(0,0,0,0.3)' : 'white');
+    });
+  }
+
+  // === Harita audit: rowMap'ten eslesemeyen ve null deger donen cevreler ===
+  auditMap(rows, rowMap, focusType, focusParti);
+
+  renderHemicycle(sonuc);
+  renderChart(sonuc);
+}
+
+function auditMap(rows, rowMap, focusType, focusParti) {
+  const geo = mapLevel === 'il' ? ilGeo : cevreGeo;
+  const warnBanner = document.getElementById('warning-banner');
+  const warnText = document.getElementById('warning-text');
+  const issues = [];
+
+  // 1. Geojson'da olup row uretilmeyen
+  const noRow = [];
+  for (const f of geo.features) {
+    const key = f.properties.KEY;
+    if (!rowMap.get(key)) noRow.push(key);
+  }
+  if (noRow.length) issues.push(`${noRow.length} harita bolgesi veri bulamadi: ${noRow.slice(0,5).join(', ')}${noRow.length>5?'…':''}`);
+
+  // 2. Row'da olup geojson'a yerleslemeyen
+  const geoKeys = new Set(geo.features.map(f => f.properties.KEY));
+  const noGeo = rows.filter(r => !geoKeys.has(mapLevel === 'il' ? r.il : r.cevre_id))
+                     .map(r => mapLevel === 'il' ? r.il : r.cevre_id);
+  if (noGeo.length) issues.push(`${noGeo.length} sonuc bolgesi haritada gozukmuyor: ${noGeo.slice(0,5).join(', ')}${noGeo.length>5?'…':''}`);
+
+  // 3. Mevcut metric icin null donen bolgeler (sadece parti metrikleri)
+  if (focusType !== 'kazanan' && focusParti) {
+    let nullCount = 0;
+    const nullExamples = [];
+    for (const f of geo.features) {
+      const r = rowMap.get(f.properties.KEY);
+      if (!r) continue;
+      const v = (function(){
+        if (focusType === 'oy') return (!r.votes || !r.gecerli) ? null : 1;
+        if (focusType === 'mvshare') return r.mv === 0 ? null : 1;
+        if (focusType === 'margin') {
+          if (!r.margins || !r.margins[focusParti]) return null;
+          return r.margins[focusParti].needPct === null ? null : 1;
+        }
+        return 1;
+      })();
+      if (v === null) { nullCount++; if (nullExamples.length < 5) nullExamples.push(f.properties.KEY); }
+    }
+    if (nullCount > 0 && focusType === 'margin') {
+      issues.push(`${nullCount} bolge bu metrik icin hesaplanamadi (parti bu cevrede aday degil veya zaten max MV almis): ${nullExamples.join(', ')}${nullCount>5?'…':''}`);
+    }
+  }
+
+  if (issues.length === 0) {
+    warnBanner.classList.add('hidden');
+    console.log('[map-audit] Tum bolgeler eslesti ✓');
+  } else {
+    warnBanner.classList.remove('hidden');
+    warnText.textContent = issues.join(' | ');
+    console.warn('[map-audit]', issues);
+  }
+}
+
+function renderHemicycle(sonuc) {
+  const svg = d3.select('#hemicycle');
+  svg.selectAll('*').remove();
+  // Daha kompakt + dolu görünüm: rInner küçük, rows artırıldı
+  const W = 600, H = 320, cx = W / 2, cy = 280, rOuter = 270, rInner = 80;
+  const rows = 14;
+  const TOTAL = 600;
+
+  // Yoldas tercih: AKP+MHP+DEM sag tarafa kumelenir, digerleri solda
+  const order = (mode === 'birlesik')
+    ? ['SOL', 'MG', 'MI', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP']
+    : ['SOL', 'SAADET', 'YRP', 'MEMLEKET', 'ZAFER', 'IYI', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP'];
+
+  // Her partinin aci dilimi (cumulative)
+  const partiSpans = {};
+  let cum = 0;
+  for (const p of order) {
+    const mv = sonuc.toplam.find(x => x.parti === p)?.mv ?? 0;
+    if (mv === 0) { partiSpans[p] = null; continue; }
+    const startAngle = Math.PI - (cum / TOTAL) * Math.PI;
+    cum += mv;
+    const endAngle = Math.PI - (cum / TOTAL) * Math.PI;
+    partiSpans[p] = [startAngle, endAngle];
+  }
+
+  // Yarim daire pozisyonlari — daha dolu görünüm için rInner küçültüldü
+  const radii = [];
+  let totalCap = 0;
+  for (let r = 0; r < rows; r++) {
+    const rad = rInner + (rOuter - rInner) * (r / (rows - 1));
+    radii.push(rad);
+    totalCap += Math.floor((Math.PI * rad) / 11);
+  }
+  const rowSeats = [];
+  let allocatedRow = 0, remainingRow = TOTAL;
+  for (let r = 0; r < rows; r++) {
+    const cap = Math.floor((Math.PI * radii[r]) / 11);
+    const share = Math.round((cap / totalCap) * TOTAL);
+    rowSeats.push(Math.min(share, remainingRow));
+    allocatedRow += rowSeats[r];
+    remainingRow = TOTAL - allocatedRow;
+  }
+  if (remainingRow > 0) rowSeats[rows - 1] += remainingRow;
+  if (allocatedRow > TOTAL) rowSeats[rows - 1] -= (allocatedRow - TOTAL);
+
+  function findParti(angle) {
+    for (const p of order) {
+      const span = partiSpans[p];
+      if (!span) continue;
+      if (angle <= span[0] + 1e-9 && angle >= span[1] - 1e-9) return p;
+    }
+    return null;
+  }
+
+  for (let r = 0; r < rows; r++) {
+    const rad = radii[r], nRow = rowSeats[r];
+    for (let i = 0; i < nRow; i++) {
+      const t = nRow === 1 ? 0.5 : i / (nRow - 1);
+      const angle = Math.PI - t * Math.PI;
+      const x = cx + rad * Math.cos(angle), y = cy - rad * Math.sin(angle);
+      const p = findParti(angle);
+      const fill = p ? renkler()[p] : '#E5E7EB';
+      svg.append('circle').attr('cx', x).attr('cy', y).attr('r', 4).attr('fill', fill);
+    }
+  }
+
+  const legend = document.getElementById('hemicycle-legend');
+  legend.innerHTML = '';
+  for (const r of sonuc.toplam) {
+    if (r.mv === 0) continue;
+    const item = document.createElement('span');
+    item.className = 'item';
+    item.innerHTML = `<span class="swatch" style="background:${renkler()[r.parti]}"></span>${PARTI_AD[r.parti]} <strong>${r.mv}</strong>`;
+    legend.appendChild(item);
+  }
+}
+
+function renderChart(sonuc) {
+  const ctx = document.getElementById('comparison-chart');
+  const filtered = sonuc.toplam.filter(r => r.oy_pct > 0.1);
+  const labels = filtered.map(r => PARTI_AD[r.parti]);
+  const oy = filtered.map(r => +r.oy_pct.toFixed(2));
+  const mv = filtered.map(r => +r.mv_pct.toFixed(2));
+  const colors = filtered.map(r => renkler()[r.parti]);
+  if (comparisonChart) comparisonChart.destroy();
+  comparisonChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels, datasets: [
+      { label: 'Oy %', data: oy, backgroundColor: colors.map(c => c + '55'),
+        borderColor: colors, borderWidth: 1, borderRadius: 4 },
+      { label: 'Koltuk %', data: mv, backgroundColor: colors, borderRadius: 4 }
+    ]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { boxWidth: 10, boxHeight: 10, font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(2)}%` } }
+      },
+      scales: {
+        y: { beginAtZero: true, ticks: { callback: v => v + '%', font: { size: 10 } } },
+        x: { ticks: { font: { size: 10 }, maxRotation: 35 } }
+      }
+    }
+  });
+}
+
+function renderTable(sonuc) {
+  const thead = document.querySelector('#il-table thead');
+  const tbody = document.querySelector('#il-table tbody');
+  const title = document.getElementById('table-title');
+  const metric = document.getElementById('table-metric-select').value;
+  const partySel = document.getElementById('table-party-select');
+  const parti = metric === 'kazanan' ? null : partySel.value;
+  partySel.disabled = (metric === 'kazanan');
+
+  const rows = mapLevel === 'il' ? sonuc.il : sonuc.cevre;
+  const keyField = mapLevel === 'il' ? 'il' : 'cevre_id';
+  const labelField = mapLevel === 'il' ? 'il' : 'cevre_adi';
+  const seviyeAdi = mapLevel === 'il' ? 'İl' : 'Çevre';
+
+  if (metric === 'kazanan') {
+    title.textContent = `${seviyeAdi} Bazlı Detay`;
+    thead.innerHTML = `<tr><th>${seviyeAdi}</th><th class="num">MV</th><th>Kazanan</th><th>En Yakın +1 MV</th></tr>`;
+    tbody.innerHTML = '';
+    const sorted = [...rows].sort((a, b) => b.mv - a.mv);
+    for (const r of sorted) {
+      const tr = tbody.insertRow();
+      let closest = null;
+      if (r.margins) {
+        const candidates = Object.entries(r.margins)
+          .filter(([p, m]) => m.needPct !== null && m.needPct > 0)
+          .sort((a, b) => a[1].needPct - b[1].needPct);
+        if (candidates.length > 0) closest = candidates[0];
+      }
+      const closestHtml = closest
+        ? `<span class="margin-pill ${closest[1].needPct < 1 ? 'very-close' : closest[1].needPct < 3 ? 'close' : ''}" style="color:${renkler()[closest[0]]}">${PARTI_AD[closest[0]]} +${closest[1].needPct}%</span>`
+        : '—';
+      tr.innerHTML = `
+        <td>${r[labelField] || r[keyField]}</td>
+        <td class="num"><strong>${r.mv}</strong></td>
+        <td><span class="swatch" style="background:${renkler()[r.kazanan]}"></span> ${PARTI_AD[r.kazanan]}</td>
+        <td>${closestHtml}</td>
+      `;
+    }
+    return;
+  }
+
+  const partiAd = PARTI_AD[parti] || parti;
+  const partiRenk = renkler()[parti];
+
+  if (metric === 'oy') {
+    title.textContent = `${seviyeAdi} Bazlı Detay`;
+    thead.innerHTML = `<tr><th>${seviyeAdi}</th><th class="num">Toplam MV</th><th class="num">${partiAd} Oy</th><th class="num">${partiAd} %</th><th class="num">${partiAd} MV</th></tr>`;
+    tbody.innerHTML = '';
+    const sorted = [...rows].sort((a, b) => {
+      const av = a.votes && a.gecerli ? (a.votes[parti] || 0) / a.gecerli : 0;
+      const bv = b.votes && b.gecerli ? (b.votes[parti] || 0) / b.gecerli : 0;
+      return bv - av;
+    });
+    for (const r of sorted) {
+      const v = r.votes && r.gecerli ? (100 * (r.votes[parti] || 0)) / r.gecerli : null;
+      const tr = tbody.insertRow();
+      tr.innerHTML = `
+        <td>${r[labelField] || r[keyField]}</td>
+        <td class="num">${r.mv}</td>
+        <td class="num">${(r.votes?.[parti] || 0).toLocaleString('tr-TR')}</td>
+        <td class="num"><strong style="color:${partiRenk}">${v === null ? '—' : v.toFixed(1) + '%'}</strong></td>
+        <td class="num">${r[parti] || 0}</td>
+      `;
+    }
+  } else if (metric === 'mv') {
+    title.textContent = `${seviyeAdi} Bazlı Detay`;
+    thead.innerHTML = `<tr><th>${seviyeAdi}</th><th class="num">Toplam MV</th><th class="num">${partiAd} MV</th><th class="num">Pay (%)</th><th>+1 MV İçin</th></tr>`;
+    tbody.innerHTML = '';
+    const sorted = [...rows].sort((a, b) => (b[parti] || 0) - (a[parti] || 0));
+    for (const r of sorted) {
+      const tr = tbody.insertRow();
+      const m = r.margins ? r.margins[parti] : null;
+      const marginHtml = m && m.needPct !== null && m.needPct > 0
+        ? `<span class="margin-pill ${m.needPct < 1 ? 'very-close' : m.needPct < 3 ? 'close' : ''}">+${m.needPct}%</span>`
+        : '—';
+      tr.innerHTML = `
+        <td>${r[labelField] || r[keyField]}</td>
+        <td class="num">${r.mv}</td>
+        <td class="num"><strong style="color:${partiRenk}">${r[parti] || 0}</strong></td>
+        <td class="num">${r.mv > 0 ? (100 * (r[parti] || 0) / r.mv).toFixed(1) + '%' : '—'}</td>
+        <td>${marginHtml}</td>
+      `;
+    }
+  } else if (metric === 'mvshare') {
+    title.textContent = `${seviyeAdi} Bazlı Detay — ${partiAd} Toplam Milletvekili Oranı (%)`;
+    thead.innerHTML = `<tr><th>${seviyeAdi}</th><th class="num">Toplam MV</th><th class="num">${partiAd} MV</th><th class="num">${partiAd} Oranı (%)</th></tr>`;
+    tbody.innerHTML = '';
+    const sorted = [...rows].sort((a, b) => {
+      const aShare = a.mv > 0 ? (a[parti] || 0) / a.mv : 0;
+      const bShare = b.mv > 0 ? (b[parti] || 0) / b.mv : 0;
+      return bShare - aShare;
+    });
+    for (const r of sorted) {
+      const share = r.mv > 0 ? (100 * (r[parti] || 0)) / r.mv : null;
+      const tr = tbody.insertRow();
+      tr.innerHTML = `
+        <td>${r[labelField] || r[keyField]}</td>
+        <td class="num">${r.mv}</td>
+        <td class="num">${r[parti] || 0}</td>
+        <td class="num"><strong style="color:${partiRenk}">${share === null ? '—' : share.toFixed(1) + '%'}</strong></td>
+      `;
+    }
+  } else if (metric === 'margin') {
+    title.textContent = `${seviyeAdi} Bazlı Detay — ${partiAd} Sonraki MV için Gerekli Oy (%)`;
+    thead.innerHTML = `<tr><th>${seviyeAdi}</th><th class="num">Toplam MV</th><th class="num">${partiAd} MV</th><th class="num">+1 MV İçin Gerekli (%)</th></tr>`;
+    tbody.innerHTML = '';
+    const sorted = [...rows].sort((a, b) => {
+      const am = a.margins?.[parti]?.needPct;
+      const bm = b.margins?.[parti]?.needPct;
+      if (am === null || am === undefined) return 1;
+      if (bm === null || bm === undefined) return -1;
+      return am - bm;
+    });
+    for (const r of sorted) {
+      const m = r.margins ? r.margins[parti] : null;
+      const tr = tbody.insertRow();
+      const marginHtml = m && m.needPct !== null
+        ? `<strong class="margin-pill ${m.needPct < 1 ? 'very-close' : m.needPct < 3 ? 'close' : ''}" style="color:${partiRenk}">+${m.needPct}%</strong>`
+        : '<span style="color:var(--text-tertiary)">—</span>';
+      tr.innerHTML = `
+        <td>${r[labelField] || r[keyField]}</td>
+        <td class="num">${r.mv}</td>
+        <td class="num">${r[parti] || 0}</td>
+        <td class="num">${marginHtml}</td>
+      `;
+    }
+  }
+}
+
+function recalc() {
+  readExempt();
+  const sonuc = motor.run(values, {
+    barajExempt: exempt,
+    barajPct: barajPct,
+    splitAlliances: mode === 'ayri',
+    mgWeightMode: mgWeightMode
+  });
+  lastSonuc = sonuc;
+  // Pipeline warning'lerini UI banner'ina yansit
+  if (sonuc.warnings && sonuc.warnings.length > 0) {
+    const w = document.getElementById('warning-banner');
+    w.classList.remove('hidden');
+    document.getElementById('warning-text').textContent = sonuc.warnings.join(' | ');
+  }
+  renderAll(sonuc);
+  dirty = false;
+  const btn = document.getElementById('run-btn');
+  btn.classList.remove('dirty');
+  btn.textContent = `▶ Çalıştır · ${baselineYear} · ${mgWeightMode === 'tarihsel' ? 'MG tarihsel' : 'MG klasik'}`;
+}
+
+// === INIT ===
+rebuildSliders();
+setupMapPaths();
+recalc();
+</script>
+
+</body>
+</html>

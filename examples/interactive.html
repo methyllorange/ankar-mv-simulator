@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>MV Senaryo Hesaplayıcı — Interaktif</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; margin: 0; padding: 24px; background: #F9FAFB; color: #111827; }
+    .container { max-width: 1280px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    .sub { color: #6B7280; margin-bottom: 24px; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 360px 1fr; gap: 32px; }
+    .panel { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .slider-row { display: grid; grid-template-columns: 70px 1fr 60px; gap: 12px; align-items: center; margin-bottom: 12px; font-size: 14px; }
+    .slider-row label { font-weight: 600; }
+    .slider-row .pay { text-align: right; font-variant-numeric: tabular-nums; color: #374151; }
+    input[type=range] { width: 100%; }
+    .total-row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid #E5E7EB; font-weight: 600; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid #E5E7EB; }
+    th { background: #F3F4F6; font-weight: 600; }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .badge { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; margin-right: 8px; }
+    .blok { display: flex; justify-content: space-between; padding: 8px 12px; border-radius: 8px; margin-bottom: 8px; font-size: 13px; }
+    .blok strong { font-size: 16px; }
+    .footer { color: #9CA3AF; font-size: 12px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>D'Hondt MV Senaryo Hesaplayıcı</h1>
+  <p class="sub">Slider'larla ülkesel oy paylarını ayarla — 87 seçim çevresinde 600 MV anlık yeniden dağıtılır.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <h3 style="margin-top:0">Senaryo (ülkesel oy %)</h3>
+      <div id="sliders"></div>
+      <div class="total-row">
+        <span>Toplam</span>
+        <span id="toplam">100.0</span>
+      </div>
+      <div style="margin-top:16px;">
+        <label><input type="checkbox" id="exempt-mhp" checked> MHP baraj 0</label><br>
+        <label><input type="checkbox" id="exempt-sol" checked> Sol İttifak baraj 0</label>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">Sonuç</h3>
+      <table id="sonuc-tablo">
+        <thead>
+          <tr><th>Parti</th><th class="num">MV</th><th class="num">MV %</th><th class="num">Oy %</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h3 style="margin-top:24px">Politik Kümeler</h3>
+      <div id="kumeler"></div>
+
+      <p class="footer" id="meta-info"></p>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { Pipeline } from '../js/dhondt-pipeline.js';
+
+const PARTI_AD = {
+  CHP: 'CHP', AKP: 'AK Parti', MHP: 'MHP',
+  MI: 'Milliyetçi İttifak', MG: 'Milli Görüş İttifakı',
+  DEM: 'DEM', SOL: 'Sol İttifak', DIGER: 'Diğer'
+};
+
+let motor;
+try {
+  motor = await Pipeline.load('../data');
+} catch (e) {
+  document.body.innerHTML = '<h1 style="color:red">Veri yüklenemedi</h1><p>Bu dosyayı bir HTTP sunucusu ile aç (örn. <code>python -m http.server</code>). file:// üzerinden fetch CORS engelinden çalışmaz.</p><pre>' + e.message + '</pre>';
+  throw e;
+}
+
+const renkler = motor.meta.renkler;
+const partiler = motor.meta.partiler;
+const sliders = document.getElementById('sliders');
+const tbody = document.querySelector('#sonuc-tablo tbody');
+const toplamSpan = document.getElementById('toplam');
+const kumelerDiv = document.getElementById('kumeler');
+const metaInfo = document.getElementById('meta-info');
+
+// Slider'lari olustur
+const values = { ...motor.meta.default_senaryo };
+for (const p of partiler) {
+  const row = document.createElement('div');
+  row.className = 'slider-row';
+  row.innerHTML = `
+    <label><span class="badge" style="background:${renkler[p]}"></span>${PARTI_AD[p]}</label>
+    <input type="range" min="0" max="40" step="0.1" value="${values[p]}" data-parti="${p}">
+    <span class="pay" id="pay-${p}">${values[p].toFixed(1)}%</span>
+  `;
+  sliders.appendChild(row);
+}
+
+function update() {
+  let toplam = 0;
+  for (const p of partiler) {
+    const inp = sliders.querySelector(`input[data-parti="${p}"]`);
+    values[p] = parseFloat(inp.value);
+    document.getElementById(`pay-${p}`).textContent = values[p].toFixed(1) + '%';
+    toplam += values[p];
+  }
+  toplamSpan.textContent = toplam.toFixed(1) + '%';
+  toplamSpan.style.color = Math.abs(toplam - 100) < 0.5 ? '#10B981' : '#EF4444';
+
+  const exempt = [];
+  if (document.getElementById('exempt-mhp').checked) exempt.push('MHP');
+  if (document.getElementById('exempt-sol').checked) exempt.push('SOL');
+
+  const sonuc = motor.run(values, { barajExempt: exempt });
+  render(sonuc);
+}
+
+function render(sonuc) {
+  tbody.innerHTML = '';
+  for (const row of sonuc.toplam) {
+    const tr = tbody.insertRow();
+    tr.innerHTML = `
+      <td><span class="badge" style="background:${renkler[row.parti]}"></span>${PARTI_AD[row.parti]}</td>
+      <td class="num"><strong>${row.mv}</strong></td>
+      <td class="num">${row.mv_pct.toFixed(2)}%</td>
+      <td class="num">${row.oy_pct.toFixed(2)}%</td>
+    `;
+  }
+
+  // Politik kumeler
+  const map = Object.fromEntries(sonuc.toplam.map(r => [r.parti, r.mv]));
+  kumelerDiv.innerHTML = `
+    <div class="blok" style="background:${renkler.AKP}22; color:${renkler.AKP}">
+      <span>Cumhur ekseni (AKP + MHP)</span><strong>${map.AKP + map.MHP} MV</strong>
+    </div>
+    <div class="blok" style="background:${renkler.CHP}22; color:${renkler.CHP}">
+      <span>Muhalefet (CHP + DEM + MG + MI + SOL)</span>
+      <strong>${map.CHP + map.DEM + map.MG + map.MI + map.SOL} MV</strong>
+    </div>
+    <div class="blok" style="background:${renkler.CHP}22; color:${renkler.CHP}">
+      <span>CHP + DEM</span><strong>${map.CHP + map.DEM} MV</strong>
+    </div>
+  `;
+
+  metaInfo.textContent = `Toplam ${sonuc.meta.total_mv} MV · Baraj %${sonuc.meta.baraj_pct} · Exempt: ${sonuc.meta.baraj_exempt.join(', ') || '(yok)'}`;
+}
+
+sliders.addEventListener('input', update);
+document.getElementById('exempt-mhp').addEventListener('change', update);
+document.getElementById('exempt-sol').addEventListener('change', update);
+update();
+</script>
+</body>
+</html>

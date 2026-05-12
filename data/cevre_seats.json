@@ -1,0 +1,437 @@
+[
+  {
+    "cevre_id": "ADANA",
+    "cevre_adi": "Adana",
+    "mv": 15
+  },
+  {
+    "cevre_id": "ADIYAMAN",
+    "cevre_adi": "Adıyaman",
+    "mv": 5
+  },
+  {
+    "cevre_id": "AFYONKARAHISAR",
+    "cevre_adi": "Afyonkarahisar",
+    "mv": 6
+  },
+  {
+    "cevre_id": "AGRI",
+    "cevre_adi": "Ağrı",
+    "mv": 4
+  },
+  {
+    "cevre_id": "AKSARAY",
+    "cevre_adi": "Aksaray",
+    "mv": 4
+  },
+  {
+    "cevre_id": "AMASYA",
+    "cevre_adi": "Amasya",
+    "mv": 3
+  },
+  {
+    "cevre_id": "ANKARA_1",
+    "cevre_adi": "Ankara 1",
+    "mv": 13
+  },
+  {
+    "cevre_id": "ANKARA_2",
+    "cevre_adi": "Ankara 2",
+    "mv": 11
+  },
+  {
+    "cevre_id": "ANKARA_3",
+    "cevre_adi": "Ankara 3",
+    "mv": 12
+  },
+  {
+    "cevre_id": "ANTALYA",
+    "cevre_adi": "Antalya",
+    "mv": 17
+  },
+  {
+    "cevre_id": "ARDAHAN",
+    "cevre_adi": "Ardahan",
+    "mv": 2
+  },
+  {
+    "cevre_id": "ARTVIN",
+    "cevre_adi": "Artvin",
+    "mv": 2
+  },
+  {
+    "cevre_id": "AYDIN",
+    "cevre_adi": "Aydın",
+    "mv": 8
+  },
+  {
+    "cevre_id": "BALIKESIR",
+    "cevre_adi": "Balıkesir",
+    "mv": 9
+  },
+  {
+    "cevre_id": "BARTIN",
+    "cevre_adi": "Bartın",
+    "mv": 2
+  },
+  {
+    "cevre_id": "BATMAN",
+    "cevre_adi": "Batman",
+    "mv": 5
+  },
+  {
+    "cevre_id": "BAYBURT",
+    "cevre_adi": "Bayburt",
+    "mv": 1
+  },
+  {
+    "cevre_id": "BILECIK",
+    "cevre_adi": "Bilecik",
+    "mv": 2
+  },
+  {
+    "cevre_id": "BINGOL",
+    "cevre_adi": "Bingöl",
+    "mv": 3
+  },
+  {
+    "cevre_id": "BITLIS",
+    "cevre_adi": "Bitlis",
+    "mv": 3
+  },
+  {
+    "cevre_id": "BOLU",
+    "cevre_adi": "Bolu",
+    "mv": 3
+  },
+  {
+    "cevre_id": "BURDUR",
+    "cevre_adi": "Burdur",
+    "mv": 3
+  },
+  {
+    "cevre_id": "BURSA_1",
+    "cevre_adi": "Bursa 1",
+    "mv": 10
+  },
+  {
+    "cevre_id": "BURSA_2",
+    "cevre_adi": "Bursa 2",
+    "mv": 10
+  },
+  {
+    "cevre_id": "CANAKKALE",
+    "cevre_adi": "Çanakkale",
+    "mv": 4
+  },
+  {
+    "cevre_id": "CANKIRI",
+    "cevre_adi": "Çankırı",
+    "mv": 2
+  },
+  {
+    "cevre_id": "CORUM",
+    "cevre_adi": "Çorum",
+    "mv": 4
+  },
+  {
+    "cevre_id": "DENIZLI",
+    "cevre_adi": "Denizli",
+    "mv": 7
+  },
+  {
+    "cevre_id": "DIYARBAKIR",
+    "cevre_adi": "Diyarbakır",
+    "mv": 12
+  },
+  {
+    "cevre_id": "DUZCE",
+    "cevre_adi": "Düzce",
+    "mv": 3
+  },
+  {
+    "cevre_id": "EDIRNE",
+    "cevre_adi": "Edirne",
+    "mv": 4
+  },
+  {
+    "cevre_id": "ELAZIG",
+    "cevre_adi": "Elazığ",
+    "mv": 5
+  },
+  {
+    "cevre_id": "ERZINCAN",
+    "cevre_adi": "Erzincan",
+    "mv": 2
+  },
+  {
+    "cevre_id": "ERZURUM",
+    "cevre_adi": "Erzurum",
+    "mv": 6
+  },
+  {
+    "cevre_id": "ESKISEHIR",
+    "cevre_adi": "Eskişehir",
+    "mv": 6
+  },
+  {
+    "cevre_id": "GAZIANTEP",
+    "cevre_adi": "Gaziantep",
+    "mv": 14
+  },
+  {
+    "cevre_id": "GIRESUN",
+    "cevre_adi": "Giresun",
+    "mv": 4
+  },
+  {
+    "cevre_id": "GUMUSHANE",
+    "cevre_adi": "Gümüşhane",
+    "mv": 2
+  },
+  {
+    "cevre_id": "HAKKARI",
+    "cevre_adi": "Hakkari",
+    "mv": 3
+  },
+  {
+    "cevre_id": "HATAY",
+    "cevre_adi": "Hatay",
+    "mv": 11
+  },
+  {
+    "cevre_id": "IGDIR",
+    "cevre_adi": "Iğdır",
+    "mv": 2
+  },
+  {
+    "cevre_id": "ISPARTA",
+    "cevre_adi": "Isparta",
+    "mv": 4
+  },
+  {
+    "cevre_id": "ISTANBUL_1",
+    "cevre_adi": "İstanbul 1",
+    "mv": 35
+  },
+  {
+    "cevre_id": "ISTANBUL_2",
+    "cevre_adi": "İstanbul 2",
+    "mv": 27
+  },
+  {
+    "cevre_id": "ISTANBUL_3",
+    "cevre_adi": "İstanbul 3",
+    "mv": 36
+  },
+  {
+    "cevre_id": "IZMIR_1",
+    "cevre_adi": "İzmir 1",
+    "mv": 14
+  },
+  {
+    "cevre_id": "IZMIR_2",
+    "cevre_adi": "İzmir 2",
+    "mv": 14
+  },
+  {
+    "cevre_id": "KAHRAMANMARAS",
+    "cevre_adi": "Kahramanmaraş",
+    "mv": 8
+  },
+  {
+    "cevre_id": "KARABUK",
+    "cevre_adi": "Karabük",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KARAMAN",
+    "cevre_adi": "Karaman",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KARS",
+    "cevre_adi": "Kars",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KASTAMONU",
+    "cevre_adi": "Kastamonu",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KAYSERI",
+    "cevre_adi": "Kayseri",
+    "mv": 10
+  },
+  {
+    "cevre_id": "KILIS",
+    "cevre_adi": "Kilis",
+    "mv": 2
+  },
+  {
+    "cevre_id": "KIRIKKALE",
+    "cevre_adi": "Kırıkkale",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KIRKLARELI",
+    "cevre_adi": "Kırklareli",
+    "mv": 3
+  },
+  {
+    "cevre_id": "KIRSEHIR",
+    "cevre_adi": "Kırşehir",
+    "mv": 2
+  },
+  {
+    "cevre_id": "KOCAELI",
+    "cevre_adi": "Kocaeli",
+    "mv": 14
+  },
+  {
+    "cevre_id": "KONYA",
+    "cevre_adi": "Konya",
+    "mv": 15
+  },
+  {
+    "cevre_id": "KUTAHYA",
+    "cevre_adi": "Kütahya",
+    "mv": 5
+  },
+  {
+    "cevre_id": "MALATYA",
+    "cevre_adi": "Malatya",
+    "mv": 6
+  },
+  {
+    "cevre_id": "MANISA",
+    "cevre_adi": "Manisa",
+    "mv": 10
+  },
+  {
+    "cevre_id": "MARDIN",
+    "cevre_adi": "Mardin",
+    "mv": 6
+  },
+  {
+    "cevre_id": "MERSIN",
+    "cevre_adi": "Mersin",
+    "mv": 13
+  },
+  {
+    "cevre_id": "MUGLA",
+    "cevre_adi": "Muğla",
+    "mv": 7
+  },
+  {
+    "cevre_id": "MUS",
+    "cevre_adi": "Muş",
+    "mv": 3
+  },
+  {
+    "cevre_id": "NEVSEHIR",
+    "cevre_adi": "Nevşehir",
+    "mv": 3
+  },
+  {
+    "cevre_id": "NIGDE",
+    "cevre_adi": "Niğde",
+    "mv": 3
+  },
+  {
+    "cevre_id": "ORDU",
+    "cevre_adi": "Ordu",
+    "mv": 6
+  },
+  {
+    "cevre_id": "OSMANIYE",
+    "cevre_adi": "Osmaniye",
+    "mv": 4
+  },
+  {
+    "cevre_id": "RIZE",
+    "cevre_adi": "Rize",
+    "mv": 3
+  },
+  {
+    "cevre_id": "SAKARYA",
+    "cevre_adi": "Sakarya",
+    "mv": 8
+  },
+  {
+    "cevre_id": "SAMSUN",
+    "cevre_adi": "Samsun",
+    "mv": 9
+  },
+  {
+    "cevre_id": "SANLIURFA",
+    "cevre_adi": "Şanlıurfa",
+    "mv": 14
+  },
+  {
+    "cevre_id": "SIIRT",
+    "cevre_adi": "Siirt",
+    "mv": 3
+  },
+  {
+    "cevre_id": "SINOP",
+    "cevre_adi": "Sinop",
+    "mv": 2
+  },
+  {
+    "cevre_id": "SIRNAK",
+    "cevre_adi": "Şırnak",
+    "mv": 4
+  },
+  {
+    "cevre_id": "SIVAS",
+    "cevre_adi": "Sivas",
+    "mv": 5
+  },
+  {
+    "cevre_id": "TEKIRDAG",
+    "cevre_adi": "Tekirdağ",
+    "mv": 8
+  },
+  {
+    "cevre_id": "TOKAT",
+    "cevre_adi": "Tokat",
+    "mv": 5
+  },
+  {
+    "cevre_id": "TRABZON",
+    "cevre_adi": "Trabzon",
+    "mv": 6
+  },
+  {
+    "cevre_id": "TUNCELI",
+    "cevre_adi": "Tunceli",
+    "mv": 1
+  },
+  {
+    "cevre_id": "USAK",
+    "cevre_adi": "Uşak",
+    "mv": 3
+  },
+  {
+    "cevre_id": "VAN",
+    "cevre_adi": "Van",
+    "mv": 8
+  },
+  {
+    "cevre_id": "YALOVA",
+    "cevre_adi": "Yalova",
+    "mv": 3
+  },
+  {
+    "cevre_id": "YOZGAT",
+    "cevre_adi": "Yozgat",
+    "mv": 4
+  },
+  {
+    "cevre_id": "ZONGULDAK",
+    "cevre_adi": "Zonguldak",
+    "mv": 5
+  }
+]

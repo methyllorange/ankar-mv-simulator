@@ -1,0 +1,66 @@
+[
+  {
+    "Parti": "CHP",
+    "Senaryo_MV": 184,
+    "MV_Pay_Pct": 30.67,
+    "Oy_Pay_Pct": 28.61,
+    "Gercek_2023_MV": 169,
+    "Fark": 15
+  },
+  {
+    "Parti": "AKP",
+    "Senaryo_MV": 183,
+    "MV_Pay_Pct": 30.5,
+    "Oy_Pay_Pct": 25.68,
+    "Gercek_2023_MV": 268,
+    "Fark": -85
+  },
+  {
+    "Parti": "MHP",
+    "Senaryo_MV": 17,
+    "MV_Pay_Pct": 2.83,
+    "Oy_Pay_Pct": 6.06,
+    "Gercek_2023_MV": 50,
+    "Fark": -33
+  },
+  {
+    "Parti": "MI",
+    "Senaryo_MV": 106,
+    "MV_Pay_Pct": 17.67,
+    "Oy_Pay_Pct": 17.45,
+    "Gercek_2023_MV": 43,
+    "Fark": 63
+  },
+  {
+    "Parti": "MG",
+    "Senaryo_MV": 44,
+    "MV_Pay_Pct": 7.33,
+    "Oy_Pay_Pct": 10.04,
+    "Gercek_2023_MV": 5,
+    "Fark": 39
+  },
+  {
+    "Parti": "DEM",
+    "Senaryo_MV": 62,
+    "MV_Pay_Pct": 10.33,
+    "Oy_Pay_Pct": 9,
+    "Gercek_2023_MV": 61,
+    "Fark": 1
+  },
+  {
+    "Parti": "SOL",
+    "Senaryo_MV": 4,
+    "MV_Pay_Pct": 0.67,
+    "Oy_Pay_Pct": 1.94,
+    "Gercek_2023_MV": 4,
+    "Fark": 0
+  },
+  {
+    "Parti": "DIGER",
+    "Senaryo_MV": 0,
+    "MV_Pay_Pct": 0,
+    "Oy_Pay_Pct": 1.23,
+    "Gercek_2023_MV": 0,
+    "Fark": 0
+  }
+]
