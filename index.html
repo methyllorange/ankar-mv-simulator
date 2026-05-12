@@ -440,7 +440,7 @@
 </div>
 
 <script type="module">
-import { Pipeline } from 'js/dhondt-pipeline.js';
+import { Pipeline } from './js/dhondt-pipeline.js';
 
 const ASCII_MAP = { 'Â':'A','Ç':'C','Ğ':'G','İ':'I','I':'I','Ö':'O','Ş':'S','Ü':'U',
                     'â':'a','ç':'c','ğ':'g','ı':'i','î':'i','ö':'o','ş':'s','ü':'u','û':'u' };
@@ -465,10 +465,10 @@ let comparisonChart;
 let dirty = false;
 
 try {
-  motor = await Pipeline.load('data');
+  motor = await Pipeline.load('./data');
   const [g1, g2] = await Promise.all([
-    fetch('data/turkey_il.geojson').then(r => r.json()),
-    fetch('data/turkey_cevre.geojson').then(r => r.json())
+    fetch('./data/turkey_il.geojson').then(r => r.json()),
+    fetch('./data/turkey_cevre.geojson').then(r => r.json())
   ]);
   ilGeo = g1; cevreGeo = g2;
   for (const f of ilGeo.features) f.properties.KEY = ilKey(f.properties.name);
