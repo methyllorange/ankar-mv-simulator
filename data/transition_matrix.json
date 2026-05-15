@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ANK-AR Türkiye geneli — 'Yarın Milletvekili Genel Seçimi Olsa Oyunuzu Hangi Partiye Verirsiniz? Partiler Arası Oy Geçişleri %' (Mayıs 2026)",
+  "generated_at": "2026-05-16",
+  "row_label": "2023 oyu",
+  "col_label": "yarın seçim olsa",
+  "kararsiz_method": "row_renormalize_proportional",
+  "parties_2023": ["AKP", "CHP", "MHP", "IYI", "DEM", "YRP", "DIGER", "OY_KULLANMADIM"],
+  "parties_tomorrow": ["AKP", "CHP", "MHP", "IYI", "DEM", "YRP", "ANAHTAR", "DIGER"],
+  "matrix_raw": {
+    "AKP":             { "AKP": 66.7, "CHP":  4.7, "MHP":  0.9, "IYI":  0.9, "DEM":  1.7, "YRP":  1.6, "ANAHTAR": 2.7, "DIGER":  1.3, "KARARSIZ": 19.5 },
+    "CHP":             { "AKP":  1.1, "CHP": 78.7, "MHP":  0.4, "IYI":  1.1, "DEM":  1.1, "YRP":  0.2, "ANAHTAR": 2.4, "DIGER":  1.5, "KARARSIZ": 13.5 },
+    "MHP":             { "AKP":  1.1, "CHP":  1.1, "MHP": 52.7, "IYI":  2.2, "DEM":  0.5, "YRP":  1.1, "ANAHTAR": 3.3, "DIGER":  2.2, "KARARSIZ": 35.9 },
+    "IYI":             { "AKP":  1.1, "CHP": 27.8, "MHP":  0.6, "IYI": 40.6, "DEM":  0.0, "YRP":  0.0, "ANAHTAR": 8.9, "DIGER":  3.3, "KARARSIZ": 17.8 },
+    "DEM":             { "AKP":  1.9, "CHP":  8.2, "MHP":  1.9, "IYI":  0.0, "DEM": 75.5, "YRP":  0.6, "ANAHTAR": 0.6, "DIGER":  1.3, "KARARSIZ": 10.1 },
+    "YRP":             { "AKP":  7.5, "CHP":  1.9, "MHP":  0.0, "IYI":  0.0, "DEM":  1.9, "YRP": 67.9, "ANAHTAR": 7.5, "DIGER":  3.8, "KARARSIZ":  9.4 },
+    "DIGER":           { "AKP":  3.6, "CHP":  4.5, "MHP":  0.9, "IYI":  0.9, "DEM":  0.9, "YRP":  1.8, "ANAHTAR": 4.5, "DIGER": 54.5, "KARARSIZ": 28.2 },
+    "OY_KULLANMADIM":  { "AKP":  5.0, "CHP": 17.0, "MHP":  0.0, "IYI":  4.1, "DEM":  2.8, "YRP":  1.4, "ANAHTAR": 6.0, "DIGER": 11.0, "KARARSIZ": 52.8 }
+  },
+  "notes": [
+    "OY_KULLANMADIM satırı bu fazda kullanılmıyor (2023 baseline'da non-voters yok, aynı turnout varsayımı).",
+    "KARARSIZ sütunu runtime'da row_renormalize_proportional yöntemiyle dağıtılır: matrix_norm[src][dst] = matrix_raw[src][dst] / (100 - matrix_raw[src].KARARSIZ) * 100",
+    "Ilçe-bazlı uygulama: pay_yarin[ilce][dst] = sum_src(pay_2023[ilce][src] * matrix_norm[src][dst] / 100)",
+    "ANAHTAR partisi 2023 baseline'da yok, sadece transition'dan oy alır."
+  ]
+}

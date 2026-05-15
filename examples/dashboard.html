@@ -318,7 +318,7 @@
 <div class="container">
   <div style="display:none">
   <h1>D'Hondt MV Senaryo Dashboard</h1>
-  <div class="sub">87 seçim çevresi · 600 MV · uniform proportional swing · baseline 2023 YSK</div>
+  <div class="sub">87 seçim çevresi · 600 MV · ANK-AR oy geçişi matrisi · baseline 2023 YSK</div>
   </div>
 
   <div class="hero">
@@ -331,21 +331,16 @@
     <div>
 
       <div class="card">
-        <div class="h3-row"><h3>Baseline Seçimi</h3><button class="mini-info-btn" data-control-info="baseline" title="Bilgi">!</button></div>
-        <select id="baseline-select" style="width:100%; padding:6px 8px; border:1px solid var(--border); border-radius:6px; font-size:13px; margin-bottom:12px;">
-          <option value="2023" selected>2023 Milletvekili Genel</option>
-          <option value="2018">2018 Milletvekili Genel</option>
-          <option value="2015k">2015 Kasım Milletvekili Genel</option>
-        </select>
-        <div class="h3-row"><h3>MG Ağırlık Modu</h3><button class="mini-info-btn" data-control-info="mgmode" title="Bilgi">!</button></div>
-        <div class="toggle-row" id="toggle-mg-weight">
-          <button class="active" data-mgmode="tarihsel">Tarihsel (Saadet+YRP)</button>
-          <button data-mgmode="klasik">Klasik Swing</button>
+        <div class="h3-row"><h3>Metodoloji</h3><button class="mini-info-btn" data-control-info="metodoloji" title="Bilgi">!</button></div>
+        <div style="font-size:12px; color:var(--text-secondary); line-height:1.5; margin-bottom:12px;">
+          <strong>Slider'lar 2023 ülkesel oy paylarını gösterir</strong> (gerçek 2023 default).
+          Senin hipotezin: 2023'ü değiştir → ANK-AR oy geçişi matrisi ilçe seviyesinde uygulanır → 2026 sonucu çıkar.
+          <strong>↺ 2023'e sıfırla</strong> ile her zaman gerçek 2023'e dön.
         </div>
         <div class="h3-row"><h3>İttifak Modu</h3><button class="mini-info-btn" data-control-info="ittifak" title="Bilgi">!</button></div>
         <div class="toggle-row" id="toggle-mode">
-          <button class="active" data-mode="birlesik">Birleşik (8 liste)</button>
-          <button data-mode="ayri">Ayrı (11 liste)</button>
+          <button class="active" data-mode="birlesik">Birleşik (7 liste)</button>
+          <button data-mode="ayri">Ayrı (8 liste, ANAHTAR ayrı)</button>
         </div>
         <div class="h3-row"><h3>Harita Seviyesi</h3><button class="mini-info-btn" data-control-info="seviye" title="Bilgi">!</button></div>
         <div class="toggle-row" id="toggle-map-level">
@@ -385,7 +380,13 @@
             Baraj dışı tutmak istediğin partileri yukarıda senaryo satırlarındaki <strong>B.D.</strong> kutusundan işaretle.
           </p>
         </div>
-        <button class="run-btn" id="run-btn">▶ Simülasyonu Çalıştır</button>
+        <div style="display:flex; gap:6px; margin-top:4px;">
+          <button class="run-btn" id="run-btn" style="flex:1;">▶ Simülasyonu Çalıştır</button>
+          <button class="run-btn" id="reset-matrix-btn" title="Slider'ları gerçek 2023 ülkesel paylarına döndür"
+                  style="flex:0 0 auto; background:var(--bg-tertiary); color:var(--text-primary); border:1px solid var(--border); padding:0 12px;">
+            ↺ 2023'e sıfırla
+          </button>
+        </div>
       </div>
 
     </div>
@@ -454,18 +455,18 @@ function ilKey(name) {
 let motor, ilGeo, cevreGeo;
 let mode = 'birlesik';
 let mapLevel = 'il';
-let baselineYear = '2023';
-let mgWeightMode = 'tarihsel';
 let values = {};
-let exempt = ['MHP', 'SOL'];
+let exempt = ['MHP'];
 let barajPct = 7;
 let focus = 'kazanan';
 let lastSonuc = null;
 let comparisonChart;
 let dirty = false;
+let usingMatrix = true;   // true = saf matris, false = slider override aktif
 
 try {
   motor = await Pipeline.load('../data');
+  await motor.loadMatrix('../data');
   const [g1, g2] = await Promise.all([
     fetch('../data/turkey_il.geojson').then(r => r.json()),
     fetch('../data/turkey_cevre.geojson').then(r => r.json())
@@ -478,40 +479,56 @@ try {
   throw e;
 }
 
-const PARTI_AD = {
+// PARTI_AD: mode-aware (birlesik modda YRP slot'u aslinda Milli Gorus Ittifaki = YRP+Saadet)
+const _PARTI_AD_BASE = {
   CHP: 'CHP', AKP: 'AK Parti', MHP: 'MHP',
-  MI: 'Milliyetçi İttifak', MG: 'Milli Görüş İttifakı',
-  DEM: 'DEM', SOL: 'Sol İttifak', DIGER: 'Diğer',
-  IYI: 'İYİ Parti', ZAFER: 'Zafer Partisi', MEMLEKET: 'Memleket Partisi',
-  YRP: 'Yeniden Refah', SAADET: 'Saadet Partisi'
+  MI: 'Milliyetçi İttifak', DEM: 'DEM Parti', DIGER: 'Diğer',
+  IYI: 'İYİ Parti', ANAHTAR: 'Anahtar Parti',
+  YRP: 'Yeniden Refah'
 };
-// SOL Ittifak rengi pembe (CHP kirmizisindan ayri)
-const RENK_BIRLESIK = { ...motor.meta.renkler, SOL: '#EC4899' };
-const RENK_AYRI = { ...motor.meta.renkler_ayri, SOL: '#EC4899' };
+const PARTI_AD = new Proxy(_PARTI_AD_BASE, {
+  get(t, k) {
+    if (k === 'YRP' && mode === 'birlesik') return 'Milli Görüş İttifakı';
+    return t[k];
+  }
+});
+const RENK_BIRLESIK = { ...motor.meta.renkler };
+const RENK_AYRI = { ...motor.meta.renkler_ayri };
 
 function partiler() { return mode === 'birlesik' ? motor.meta.partiler : motor.meta.partiler_ayri; }
 function renkler() { return mode === 'birlesik' ? RENK_BIRLESIK : RENK_AYRI; }
-function defaultSenaryo() {
-  return mode === 'birlesik' ? motor.meta.default_senaryo : motor.meta.default_senaryo_ayri;
+
+// Slider keys: her zaman 7 parti (ANAHTAR slider yok — 2023'te yoktu)
+// Birlesik mode: CHP, AKP, MHP, MI, YRP, DEM, DIGER
+// Ayri mode:    CHP, AKP, MHP, IYI, YRP, DEM, DIGER
+function sliderPartiler() {
+  return mode === 'birlesik'
+    ? ['CHP', 'AKP', 'MHP', 'MI', 'YRP', 'DEM', 'DIGER']
+    : ['CHP', 'AKP', 'MHP', 'IYI', 'YRP', 'DEM', 'DIGER'];
+}
+function actual2023Defaults() {
+  // Slider DEFAULT'u = gercek 2023 ulkesel paylar (kullanici 2023 hipotezini override eder)
+  return motor.actualUlkesel2023(mode === 'ayri');
 }
 
 // === SLIDER'LARI KUR ===
 function rebuildSliders() {
-  values = { ...defaultSenaryo() };
+  values = { ...actual2023Defaults() };
+  usingMatrix = true;   // slider == gercek 2023 (override yok)
   const wrap = document.getElementById('sliders');
   wrap.innerHTML = '';
-  // Default exempt partileri
-  const DEFAULT_EXEMPT = new Set(['MHP', 'SOL']);
-  for (const p of partiler()) {
+  const DEFAULT_EXEMPT = new Set(motor.meta.default_baraj_exempt || ['MHP']);
+  for (const p of sliderPartiler()) {
     const row = document.createElement('div');
     row.className = 'slider-row';
     const isExempt = DEFAULT_EXEMPT.has(p);
+    const v = values[p] ?? 0;
     row.innerHTML = `
       <span class="swatch" style="background:${renkler()[p]}"></span>
-      <label class="parti-label">${PARTI_AD[p]}</label>
-      <input type="range" min="0" max="40" step="0.1" value="${values[p]}" data-parti="${p}">
-      <span class="pay" id="pay-${p}">${values[p].toFixed(1)}%</span>
-      <label class="exempt-cb" title="${PARTI_AD[p]} baraj dışı tut">
+      <label class="parti-label">${PARTI_AD[p] || p}</label>
+      <input type="range" min="0" max="50" step="0.1" value="${v}" data-parti="${p}">
+      <span class="pay" id="pay-${p}">${v.toFixed(1)}%</span>
+      <label class="exempt-cb" title="${PARTI_AD[p] || p} baraj dışı tut">
         <input type="checkbox" data-exempt="${p}" ${isExempt ? 'checked' : ''}>
       </label>
     `;
@@ -548,7 +565,7 @@ function syncFocusFromDropdowns(triggerRender = true) {
 }
 
 function updateToplam() {
-  let t = 0; for (const p of partiler()) t += values[p];
+  let t = 0; for (const p of sliderPartiler()) t += (values[p] ?? 0);
   const el = document.getElementById('toplam');
   el.textContent = t.toFixed(1) + '%';
   el.style.color = Math.abs(t - 100) < 0.5 ? 'var(--success)' : 'var(--danger)';
@@ -565,6 +582,7 @@ document.getElementById('sliders').addEventListener('input', e => {
   if (!p) return;
   values[p] = parseFloat(e.target.value);
   document.getElementById('pay-' + p).textContent = values[p].toFixed(1) + '%';
+  usingMatrix = false;
   updateToplam();
   markDirty();
 });
@@ -591,7 +609,7 @@ document.getElementById('sliders').addEventListener('change', (e) => {
   }
 });
 
-// === Mode toggle ===
+// === Mode toggle (birlesik / ayri) ===
 document.querySelectorAll('#toggle-mode button').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('#toggle-mode button').forEach(b => b.classList.remove('active'));
@@ -603,33 +621,19 @@ document.querySelectorAll('#toggle-mode button').forEach(btn => {
   });
 });
 
-// === Baseline secimi ===
-document.getElementById('baseline-select').addEventListener('change', async (e) => {
-  baselineYear = e.target.value;
-  const btn = document.getElementById('run-btn');
-  btn.textContent = '⏳ Baseline yükleniyor...';
-  btn.disabled = true;
-  try {
-    await motor.setBaseline(baselineYear, '../data');
-    const label = { '2023': '2023 YSK', '2018': '2018 YSK', '2015k': '2015 Kasım YSK' }[baselineYear] || baselineYear;
-    document.getElementById('header-baseline').textContent = label;
-    recalc();
-  } catch (err) {
-    alert('Baseline yüklenemedi: ' + err.message);
-  } finally {
-    btn.disabled = false;
+// === 2023'e sifirla ===
+function resetTo2023() {
+  values = { ...actual2023Defaults() };
+  usingMatrix = true;
+  for (const p of sliderPartiler()) {
+    const el = document.querySelector(`#sliders input[data-parti="${p}"]`);
+    if (el) el.value = values[p];
+    const pay = document.getElementById('pay-' + p);
+    if (pay) pay.textContent = (values[p] ?? 0).toFixed(1) + '%';
   }
-});
-
-// === MG agirlik modu ===
-document.querySelectorAll('#toggle-mg-weight button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('#toggle-mg-weight button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    mgWeightMode = btn.dataset.mgmode;
-    recalc();
-  });
-});
+  updateToplam();
+  markDirty();
+}
 
 // === Map level toggle ===
 document.querySelectorAll('#toggle-map-level button').forEach(btn => {
@@ -660,7 +664,7 @@ const METRIK_BILGI = {
     baslik: 'Oy Oranı (%) — Harita Modu',
     aciklama: `Partinin secili bolgede aldığı <strong>gerçek oy yuzdesini</strong> gosterir (D'Hondt allokasyonu degil — sandıktan cıkan ham oy).`,
     formula: `oy_oranı(parti, bolge) = ( parti_oy<sub>bolge</sub> / gecerli_oy<sub>bolge</sub> ) × 100`,
-    yontem: `Senaryo girdileri (her parti icin ulkesel oy %) bolgesel paylara <strong>uniform proportional swing</strong> ile çevrilir: <code>ilce_yeni_pay = ilce_baseline_pay × (senaryo_ulke / baseline_ulke)</code>. Milli Görüş ittifaki icin secime gore Tarihsel (Saadet+YRP ortalaması) veya Klasik (2023 baseline orantili) ağırlık.`
+    yontem: `Her ilçenin 2023 oy dağılımı, <strong>ANK-AR oy geçişi matrisi</strong> ile çarpılır → o ilçenin yarın 8 partilik dağılımı. Slider override modu varsa: <code>ilce_pay × (slider_ulke / matris_ulke)</code> ikinci faz uniform swing. KARARSIZ payı satır içinde mevcut transition oranlarına orantılı dağıtılır.`
   },
   mv: {
     baslik: 'Milletvekili Sayısı — Harita Modu',
@@ -696,10 +700,11 @@ function openInfoModal() {
     <h4>Hesap Yöntemi</h4>
     <p>${bilgi.yontem}</p>
     <h4>Genel Pipeline</h4>
-    <p>Senaryo (ulkesel oy %) → <code>uniform swing</code> → ilce dağıtımı → 87 cevre toplamı →
-       <code>D'Hondt</code> (baraj %${barajPct}, MHP/Sol exempt) → 600 MV → il agregati.
-       Baseline secimi: <code>${document.getElementById('baseline-select').value}</code>,
-       Ittifak modu: <code>${mode}</code>, MG ağırlık: <code>${mgWeightMode}</code>.</p>
+    <p>Kullanıcı 2023 slider hipotezi → uniform swing ile ilçe 2023 dağılımı yeniden ölçeklenir
+       → <code>ANK-AR oy geçişi matrisi</code> (KARARSIZ row-renormalize) ilçe seviyesinde uygulanır
+       → 87 cevre toplamı → <code>D'Hondt</code> (baraj %${barajPct}, exempt: ${exempt.join(', ') || 'yok'}) → 600 MV → il agregati.
+       İttifak modu: <code>${mode}</code>${mode === 'birlesik' ? ' (MI = İYİ + ANAHTAR)' : ' (ANAHTAR ayrı liste)'}.
+       ${lastSonuc?.meta.slider_override ? 'Slider 2023 hipotezi gerçek 2023\'ten farklı.' : 'Slider gerçek 2023 paylarında.'}</p>
   `;
   document.getElementById('modal-body').innerHTML = html;
   document.getElementById('info-modal').classList.add('open');
@@ -709,24 +714,20 @@ document.getElementById('info-btn').addEventListener('click', openInfoModal);
 
 // === Kontrol panelindeki "!" bilgi butonlari ===
 const KONTROL_BILGI = {
-  baseline: {
-    baslik: 'Baseline Seçimi',
-    aciklama: `Senaryo hesabının başlangıç noktası olan <strong>geçmiş seçim verilerini</strong> seçer. Senaryodaki ulkesel oy yüzdeleri bu baseline'a göre ilçelere dağıtılır.`,
-    detay: `<strong>2023 Milletvekili Genel:</strong> En güncel ve en kapsamlı. Tüm partiler dahil (CHP, AKP, MHP, İYİ, ZAFER, MEMLEKET, YRP, SAADET, YSP, TİP). <strong>Default seçim.</strong>
-    <br><br><strong>2018:</strong> SOL ittifak (TİP) yok, YRP yok. Bu partilerin oyları her ilçeye uniform dağıtılır (warning gözükür).
-    <br><br><strong>2015 Kasım:</strong> İYİ Parti, ZAFER, MEMLEKET, YRP yok. Eski coğrafi yapı (Saadet hala vardı). Tarihsel karşılaştırma için.`
-  },
-  mgmode: {
-    baslik: 'MG (Milli Görüş) Ağırlık Modu',
-    aciklama: `Milli Görüş İttifakı (YRP + Saadet) oyunun ilçelere nasıl dağıtılacağını belirler. Sadece MG için geçerli; diğer 7 parti her iki modda da aynı klasik swing kullanır.`,
-    detay: `<strong>Tarihsel (Saadet+YRP):</strong> Saadet 2015 Kasım + Saadet 2018 + YRP 2023 oranlarının ortalamasını her ilçenin "MG ağırlığı" olarak alır, ulke ortalamasıyla normalize eder. Konya, Aksaray, Düzce gibi Saadet kalelerinde MG yığılır → D'Hondt'ta MV alabilir. <strong>Mert'in tercihi, default.</strong>
-    <br><br><strong>Klasik Swing:</strong> MG için ilçe baseline'ı YRP+SAADET 2023 olarak alır, ulkesel swing katsayısıyla çarpar. Daha düz dağılım, hiçbir cevrede yoğunlaşmaz → D'Hondt'ta zor MV alır.`
+  metodoloji: {
+    baslik: 'Metodoloji — Matris Bazlı D\'Hondt',
+    aciklama: `Slider'lar <strong>2023 ülkesel oy paylarını</strong> gösterir (kullanıcı hipotezi). Bu 2023 girdisi her ilçeye uniform swing ile uygulanır, ardından <strong>ANK-AR oy geçişi matrisi</strong> (2023 oyu × yarın oyu) ilçe seviyesinde uygulanarak 2026 sonucu çıkar. KARARSIZ payı her satırda mevcut transition oranlarına orantılı dağıtılır.`,
+    detay: `<strong>Adım 1 — Kullanıcı 2023 hipotezi:</strong> Slider'larla ülkesel 2023 paylar belirlenir. Default = gerçek 2023 paylar. Değiştirildiğinde uniform swing ile her ilçenin 2023 dağılımı bu hipoteze göre yeniden ölçeklenir.
+    <br><br><strong>Adım 2 — KARARSIZ dağıtımı:</strong> AKP satırının %19.5 kararsız payı, aynı satırın 8 karar veren hücresinin oransal dağılımına göre yeniden bölüştürülür. <code>matrix_norm[src][dst] = matrix_raw[src][dst] / (100 − KARARSIZ) × 100</code>.
+    <br><br><strong>Adım 3 — İlçe matris uygulaması:</strong> Her ilçenin (hipotetik) 2023 oy dağılımı 7×8 normalize matrisle çarpılır → o ilçenin yarın 8 partilik dağılımı (CHP, AKP, MHP, İYİ, DEM, YRP, ANAHTAR, DİĞER). Coğrafi varyasyon korunur.
+    <br><br><strong>Adım 4 — D'Hondt:</strong> 87 seçim çevresinde standart D'Hondt + %7 baraj (MHP exempt). 600 MV.
+    <br><br><strong>↺ 2023'e sıfırla</strong> butonu sliderları gerçek 2023 paylarına döndürür. <strong>ANAHTAR</strong> 2023'te yok olduğu için sadece 2026 çıktısında görünür (slider yok).`
   },
   ittifak: {
     baslik: 'İttifak Modu',
     aciklama: `Partilerin <strong>ittifak listesi mi yoksa ayrı listeler mi</strong> sunduğunu belirler. D'Hondt hesabı çevre bazında bu listelere göre yapılır.`,
-    detay: `<strong>Birleşik (8 liste):</strong> Milliyetçi İttifak (İYİ + ZAFER + MEMLEKET) ve Milli Görüş (YRP + SAADET) tek liste gibi D'Hondt'a girer. MV sonra ittifak içi alt-D'Hondt ile dağıtılır. Yoldas tercihi — gerçek 2023 ittifak yapısı.
-    <br><br><strong>Ayrı (11 liste):</strong> İYİ, ZAFER, MEMLEKET, YRP, SAADET hepsi solo listeyle D'Hondt'a girer. Daha çok küçük parti baraj altı kalır, MV dağılımı dengeleniyor.`
+    detay: `<strong>Birleşik (7 liste):</strong> Milliyetçi İttifak (İYİ + ANAHTAR) tek liste gibi D'Hondt'a girer — yoldaşın tercihi. Diğer partiler ayrı.
+    <br><br><strong>Ayrı (8 liste, ANAHTAR ayrı):</strong> ANAHTAR Partisi solo listeyle D'Hondt'a girer (baraj %7). Anahtar tek başına baraj geçer mi diye test etmek için.`
   },
   seviye: {
     baslik: 'Harita Seviyesi',
@@ -746,18 +747,21 @@ const KONTROL_BILGI = {
     <br><br><strong>Parti:</strong> Yukarıdaki 4 parti-spesifik metrik için hangi partiyi göstereceğin. "Kazanan Parti" seçildiyse parti dropdown'u devre dışıdır.`
   },
   senaryo: {
-    baslik: 'Senaryo (Oy %)',
-    aciklama: `Senaryonun temel girdileri: her partinin <strong>ulkesel oy yüzdesi</strong>. Slider'larla ayarlanır, anlık olarak D'Hondt hesabını tetikler. Toplam ~%100 olmalı (otomatik normalize edilir).`,
-    detay: `Slider'lar 0-40% arası, 0.1% adımlı. Toplam %100'den sapsa sistem otomatik normalize eder ama görseldeki "Toplam" göstergesi yeşilse iyi, kırmızıysa düzeltmek gerekir.
-    <br><br>Senaryo girdileri <strong>ulkesel oran</strong>'dır; ilçe dağılımı seçili baseline coğrafyasına göre <strong>uniform proportional swing</strong> ile yapılır: <code>ilce_yeni_pay = ilce_baseline_pay × (senaryo_ulke / baseline_ulke)</code>.
-    <br><br>Mert'in default senaryosu: CHP 29.1, AKP 25.4, MHP 5.9, MI 17.6, MG 10, DEM 9, SOL 2, DIGER 1.2.`
+    baslik: 'Senaryo (2023 Oy %)',
+    aciklama: `Slider'lar <strong>2023 ülkesel oy paylarını</strong> gösterir — kullanıcı hipotezi. Default = gerçek 2023 paylar. <strong>↺ 2023'e sıfırla</strong> her zaman gerçek 2023'e döner.`,
+    detay: `Slider'lar 0-50% arası, 0.1% adımlı. Toplam %100'den sapsa sistem otomatik normalize eder. "Toplam" göstergesi yeşilse iyi, kırmızıysa düzeltmek gerekir.
+    <br><br><strong>Slider'lar 2023 girdisidir.</strong> Değişiklik şu zinciri tetikler:
+    <br>1. Her ilçenin 2023 dağılımı slider hipotezine göre uniform swing ile ölçeklenir
+    <br>2. ANK-AR matris ilçe seviyesinde uygulanır → 2026 ilçe paylar (8 dst parti, ANAHTAR dahil)
+    <br>3. 87 çevre D'Hondt → 600 MV
+    <br><br>ANAHTAR slider'ı yoktur (2023'te parti yoktu). ANAHTAR oyu sadece transition matrisinden gelir — birleşik modda Milliyetçi İttifak içinde, ayrı modda solo.`
   },
   baraj: {
     baslik: 'Baraj',
     aciklama: `<strong>Ulkesel seçim barajı yüzdesi</strong>. Baraj altında kalan partiler D'Hondt'a katılmaz, oy verilirse "boşa gider".`,
     detay: `<strong>Baraj %:</strong> 0-15% arası, 0.5% adımlı (default %7 — 2023 yasası).
-    <br><br><strong>Baraj Dışı Tut (B.D.):</strong> Her parti için Senaryo (oy %) bölümündeki slider satırının sağında <strong>B.D.</strong> kutusu vardır. İşaretli partiler ülkesel baraj testinden muaf olur — Cumhur İttifakı'ndaki MHP, ittifak listesindeki Sol İttifak gibi durumlar için kullanılır.
-    <br><br><strong>Default işaretli:</strong> MHP (Cumhur mantığı) ve SOL İttifakı. Ayrı (11 liste) modunda istersen YRP, Saadet için de aç.`
+    <br><br><strong>Baraj Dışı Tut (B.D.):</strong> Her parti için Senaryo (oy %) bölümündeki slider satırının sağında <strong>B.D.</strong> kutusu vardır. İşaretli partiler ülkesel baraj testinden muaf olur (Cumhur mantığında MHP).
+    <br><br><strong>Default işaretli:</strong> MHP. ANAHTAR ayrı modda baraj testine girer (%7 geçemezse 0 MV).`
   }
 };
 
@@ -790,6 +794,10 @@ document.addEventListener('keydown', (e) => {
 
 // === Run button ===
 document.getElementById('run-btn').addEventListener('click', recalc);
+document.getElementById('reset-matrix-btn').addEventListener('click', () => {
+  resetTo2023();
+  recalc();
+});
 
 // === MAP ===
 const mapSvg = d3.select('#map');
@@ -1110,8 +1118,8 @@ function renderHemicycle(sonuc) {
 
   // Yoldas tercih: AKP+MHP+DEM sag tarafa kumelenir, digerleri solda
   const order = (mode === 'birlesik')
-    ? ['SOL', 'MG', 'MI', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP']
-    : ['SOL', 'SAADET', 'YRP', 'MEMLEKET', 'ZAFER', 'IYI', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP'];
+    ? ['MI', 'YRP', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP']
+    : ['IYI', 'ANAHTAR', 'YRP', 'CHP', 'DIGER', 'DEM', 'MHP', 'AKP'];
 
   // Her partinin aci dilimi (cumulative)
   const partiSpans = {};
@@ -1337,24 +1345,27 @@ function renderTable(sonuc) {
 
 function recalc() {
   readExempt();
-  const sonuc = motor.run(values, {
+  // values = kullanici 2023 hipotezi (slider). Default = gercek 2023, override edilirse user2023.
+  const sonuc = motor.runFromMatrix(values, {
     barajExempt: exempt,
     barajPct: barajPct,
-    splitAlliances: mode === 'ayri',
-    mgWeightMode: mgWeightMode
+    splitAlliances: mode === 'ayri'
   });
   lastSonuc = sonuc;
-  // Pipeline warning'lerini UI banner'ina yansit
   if (sonuc.warnings && sonuc.warnings.length > 0) {
     const w = document.getElementById('warning-banner');
     w.classList.remove('hidden');
     document.getElementById('warning-text').textContent = sonuc.warnings.join(' | ');
+  } else {
+    document.getElementById('warning-banner').classList.add('hidden');
   }
   renderAll(sonuc);
   dirty = false;
   const btn = document.getElementById('run-btn');
   btn.classList.remove('dirty');
-  btn.textContent = `▶ Çalıştır · ${baselineYear} · ${mgWeightMode === 'tarihsel' ? 'MG tarihsel' : 'MG klasik'}`;
+  btn.textContent = sonuc.meta.slider_override
+    ? '▶ Çalıştır · 2023 hipotez'
+    : '▶ Çalıştır · gerçek 2023';
 }
 
 // === INIT ===

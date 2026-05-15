@@ -1,83 +1,65 @@
 {
-  "version": "1.0.0",
-  "generated_at": "2026-05-12T14:59:09",
-  "description": "D'Hondt MV dagitim senaryo motoru — baseline 2023 MV + uniform proportional swing",
+  "version": "2.0.0",
+  "generated_at": "2026-05-16",
+  "description": "D'Hondt MV motoru — matris-bazli metodoloji (ANK-AR oy gecisi matrisi) + 2023 baseline",
   "toplam_mv": 600,
   "cevre_sayisi": 87,
   "il_sayisi": 81,
   "ilce_sayisi": 979,
   "baraj_pct": 7,
-  "partiler": ["CHP", "AKP", "MHP", "MI", "MG", "DEM", "SOL", "DIGER"],
+  "partiler": ["CHP", "AKP", "MHP", "MI", "YRP", "DEM", "DIGER"],
   "partiler_uzun": {
     "CHP": "Cumhuriyet Halk Partisi",
     "AKP": "Adalet ve Kalkinma Partisi",
     "MHP": "Milliyetci Hareket Partisi",
-    "MI": "Milliyetci Ittifak (IYI + Zafer + Memleket)",
-    "MG": "Milli Gorus Ittifaki (YRP + Saadet)",
-    "DEM": "DEM Parti / Yesil Sol",
-    "SOL": "Sol Ittifak (TIP + ufak sol partiler)",
-    "DIGER": "Diger (baraj alti kucuk partiler)"
+    "MI": "Milliyetci Ittifak (IYI + Anahtar)",
+    "YRP": "Milli Gorus Ittifaki (YRP + Saadet)",
+    "DEM": "DEM Parti",
+    "DIGER": "Diger"
   },
   "renkler": {
     "CHP": "#E30A17",
     "AKP": "#FFB81C",
     "MHP": "#A6192E",
     "MI": "#1E40AF",
-    "MG": "#16A34A",
+    "YRP": "#16A34A",
     "DEM": "#7C3AED",
-    "SOL": "#DC2626",
     "DIGER": "#6B7280"
   },
-  "default_senaryo": {
-    "CHP": 29.1,
-    "AKP": 25.4,
-    "MHP": 5.9,
-    "MI": 17.6,
-    "MG": 10,
-    "DEM": 9,
-    "SOL": 2,
-    "DIGER": 1.2
+  "partiler_ayri": ["CHP", "AKP", "MHP", "IYI", "ANAHTAR", "YRP", "DEM", "DIGER"],
+  "partiler_ayri_uzun": {
+    "CHP": "CHP",
+    "AKP": "AK Parti",
+    "MHP": "MHP",
+    "IYI": "IYI Parti",
+    "ANAHTAR": "Anahtar Parti",
+    "YRP": "Yeniden Refah",
+    "DEM": "DEM Parti",
+    "DIGER": "Diger"
   },
-  "default_senaryo_ayri": {
-    "CHP": 29.1,
-    "AKP": 25.4,
-    "MHP": 5.9,
-    "IYI": 12,
-    "ZAFER": 3.5,
-    "MEMLEKET": 2.1,
-    "YRP": 5.5,
-    "SAADET": 4.5,
-    "DEM": 9,
-    "SOL": 2,
-    "DIGER": 1.2
-  },
-  "default_baraj_exempt": ["MHP", "SOL"],
-  "partiler_ayri": ["CHP", "AKP", "MHP", "IYI", "ZAFER", "MEMLEKET", "YRP", "SAADET", "DEM", "SOL", "DIGER"],
   "renkler_ayri": {
     "CHP": "#E30A17",
     "AKP": "#FFB81C",
     "MHP": "#A6192E",
     "IYI": "#1E40AF",
-    "ZAFER": "#2563EB",
-    "MEMLEKET": "#7E22CE",
+    "ANAHTAR": "#0F766E",
     "YRP": "#16A34A",
-    "SAADET": "#0F766E",
     "DEM": "#7C3AED",
-    "SOL": "#DC2626",
     "DIGER": "#6B7280"
   },
-  "partiler_ayri_uzun": {
-    "CHP": "CHP",
-    "AKP": "AK Parti",
-    "MHP": "MHP",
-    "IYI": "İYİ Parti",
-    "ZAFER": "Zafer Partisi",
-    "MEMLEKET": "Memleket Partisi",
-    "YRP": "Yeniden Refah Partisi",
-    "SAADET": "Saadet Partisi",
-    "DEM": "DEM Parti",
-    "SOL": "Sol Ittifak (TIP+ufak)",
-    "DIGER": "Diger"
+  "default_baraj_exempt": ["MHP"],
+  "matrix_party_map_2023": {
+    "AKP": ["AKP"],
+    "CHP": ["CHP"],
+    "MHP": ["MHP"],
+    "IYI": ["IYI", "ZAFER", "MEMLEKET"],
+    "YRP": ["YRP", "SAADET"],
+    "DEM": ["DEM"],
+    "DIGER": ["DIGER", "SOL"]
   },
-  "mg_ulke_agirlik": 1.6217
+  "matrix_dest_to_birlesik": {
+    "AKP": "AKP", "CHP": "CHP", "MHP": "MHP",
+    "IYI": "MI", "ANAHTAR": "MI",
+    "YRP": "YRP", "DEM": "DEM", "DIGER": "DIGER"
+  }
 }
