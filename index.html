@@ -160,6 +160,25 @@
                   background: var(--bg-secondary); border-radius: var(--radius-sm);
                   margin-bottom: 5px; font-size: 12px; }
     .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+    .compare-btn { width: 100%; padding: 9px 12px; margin-bottom: 12px; border: none;
+                   border-radius: var(--radius-sm); background: var(--accent); color: white;
+                   font-size: 12px; font-weight: 600; cursor: pointer;
+                   font-family: inherit; transition: background 0.15s ease; }
+    .compare-btn:hover { background: #1e40af; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 12px;
+                     font-variant-numeric: tabular-nums; margin-top: 10px; }
+    .compare-table th, .compare-table td { padding: 6px 8px; text-align: right;
+                                            border-bottom: 1px solid var(--border); }
+    .compare-table th { font-weight: 600; color: var(--text-secondary); background: var(--bg-secondary);
+                        position: sticky; top: 0; }
+    .compare-table th:first-child, .compare-table td:first-child { text-align: left; }
+    .compare-table td.party-cell { display: flex; align-items: center; gap: 8px; }
+    .compare-table tr.total-row td { border-top: 2px solid var(--border); border-bottom: none;
+                                      font-weight: 700; background: var(--bg-secondary); }
+    .compare-table tr.muted td { color: var(--text-secondary); }
+    .compare-table .win-mark { background: rgba(5, 63, 107, 0.08); font-weight: 700; }
+    .compare-meta { font-size: 11px; color: var(--text-secondary); margin: 6px 0 4px;
+                    line-height: 1.5; }
     .slider-row input[type="range"] { width: 100%; accent-color: var(--accent); }
     .slider-row .pay-input { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums;
                               width: 100%; padding: 2px 4px; border: 1px solid var(--border);
@@ -382,12 +401,13 @@
 
       <div class="card">
         <div class="h3-row"><h3>Hazır Senaryolar</h3><button class="mini-info-btn" data-control-info="hazirsenaryolar" title="Bilgi">!</button></div>
-        <div class="toggle-row" id="toggle-preset" style="margin-bottom: 12px;">
+        <div class="toggle-row" id="toggle-preset" style="margin-bottom: 8px;">
           <button data-preset="default" title="Matris çıktısı 2026 default'a döner">Default</button>
           <button data-preset="S1" title="CHP 29.1, AKP 25.4, MI 17.6, MG 10, DEM 9, MHP 5.9, Diğer 3.2">S1</button>
           <button data-preset="S2" title="CHP 30, AKP 27.2, MI 18, DEM 8.6, MG 8, MHP 6, SOL 1.8, Diğer 1.3">S2</button>
-          <button data-preset="S3" title="CHP 29.2, AKP 28.6, MI 18, DEM 9, MG 7, MHP 6.3, SOL 1.9">S3</button>
+          <button data-preset="S3" title="CHP 29.2, AKP 28.6, MI 18, DEM 9, MG 7, MHP 6.3, SOL 1.9, Diğer (residual=100-toplam)">S3</button>
         </div>
+        <button id="compare-btn" class="compare-btn" title="S1, S2 ve S3 senaryolarinin sonuclarini yan yana karsilastir (birlesik mode, mevcut baraj + MG liste modu kullanir).">🔍 Karşılaştır (S1+S2+S3)</button>
         <div class="h3-row"><h3>Senaryo (oy %)</h3><button class="mini-info-btn" data-control-info="senaryo" title="Bilgi">!</button></div>
         <div class="exempt-header">
           <span></span><span></span><span></span><span></span>
@@ -461,7 +481,7 @@
 </div>
 
 <script type="module">
-import { Pipeline, PARTIES_MATRIX_BIRLESIK, PARTIES_MATRIX_AYRI } from './js/dhondt-pipeline.js?v=20260518j';
+import { Pipeline, PARTIES_MATRIX_BIRLESIK, PARTIES_MATRIX_AYRI } from './js/dhondt-pipeline.js?v=20260519a';
 
 const ASCII_MAP = { 'Â':'A','Ç':'C','Ğ':'G','İ':'I','I':'I','Ö':'O','Ş':'S','Ü':'U',
                     'â':'a','ç':'c','ğ':'g','ı':'i','î':'i','ö':'o','ş':'s','ü':'u','û':'u' };
@@ -536,10 +556,13 @@ function defaultSenaryo() {
 
 // === Yoldas senaryo presetleri (birlesik mode oranlari) ===
 // MG bolme kurali: SAADET = MG_total / 3, YRP = MG_total * 2 / 3
-function senaryoPreset(s1MG, s1Diger) {
+// s1Diger = null/undefined → preset'te DIGER yok, applySenaryoPreset _autoDiger ile 100-residual doldurur.
+function senaryoPreset(s1MG, s1Diger = null) {
   const saadet = s1MG / 3;
   const yrp = s1MG - saadet;
-  return { YRP: yrp, SAADET: saadet, DIGER: s1Diger };
+  const out = { YRP: yrp, SAADET: saadet };
+  if (s1Diger != null) out.DIGER = s1Diger;
+  return out;
 }
 
 const SENARYO_PRESETS = {
@@ -547,8 +570,8 @@ const SENARYO_PRESETS = {
   S1: { CHP: 29.1, AKP: 25.4, MHP: 5.9, MI: 17.6, ...senaryoPreset(10, 3.2), DEM: 9 },
   // S2: CHP 30, AKP 27.2, MI 18, DEM 8.6, MG 8, MHP 6, SOL 1.8, DIGER 1.3
   S2: { CHP: 30, AKP: 27.2, MHP: 6, MI: 18, ...senaryoPreset(8, 1.3 + 1.8), DEM: 8.6 },
-  // S3: CHP 29.2, AKP 28.6, MI 18, DEM 9, MG 7, MHP 6.3, SOL 1.9, DIGER (bos = 0)
-  S3: { CHP: 29.2, AKP: 28.6, MHP: 6.3, MI: 18, ...senaryoPreset(7, 0 + 1.9), DEM: 9 }
+  // S3: CHP 29.2, AKP 28.6, MI 18, DEM 9, MG 7, MHP 6.3, SOL 1.9 → DIGER residual (100 - sum)
+  S3: { CHP: 29.2, AKP: 28.6, MHP: 6.3, MI: 18, ...senaryoPreset(7), DEM: 9, _autoDiger: true }
 };
 
 // Birlesik mode'da DIGER = SOL + DIGER (eritili) — preset'lerde tek deger
@@ -558,12 +581,20 @@ const SENARYO_PRESETS = {
 // Cozum: preset secilince mode birlesik'e gec, slider'lari doldur.
 
 function applySenaryoPreset(key) {
-  const p = SENARYO_PRESETS[key];
-  if (!p) return;
+  const raw = SENARYO_PRESETS[key];
+  if (!raw) return;
   // Mode birlesik degilse cevir
   if (mode !== 'birlesik') {
     document.querySelector('#toggle-mode button[data-mode="birlesik"]')?.click();
     // Mode toggle synchronous, rebuildSliders cagrilir
+  }
+  // _autoDiger flag: DIGER = 100 - sum(others). S3 icin SOL+DIGER residual'a aktarir.
+  const { _autoDiger, ...p } = raw;
+  if (_autoDiger) {
+    const sumOthers = Object.entries(p)
+      .filter(([k, v]) => k !== 'DIGER' && typeof v === 'number')
+      .reduce((a, [, v]) => a + v, 0);
+    p.DIGER = Math.max(0, 100 - sumOthers);
   }
   // Slider'lari doldur
   values = { ...defaultSenaryo(), ...p };  // matris cikti baseline + preset override
@@ -577,6 +608,143 @@ function applySenaryoPreset(key) {
   updateToplam();
   markDirty();
   recalc();
+}
+
+// === Senaryo karsilastirma (S1+S2+S3 yan yana) ===
+// Hesaplama mode'u mevcut UI ayarini etkilemez; sadece ic hesap yapar.
+// Preset'ler birlesik mode'da anlamli oldugu icin splitAlliances: false zorlanir.
+function buildPresetValues(presetKey) {
+  const raw = SENARYO_PRESETS[presetKey];
+  if (!raw) return null;
+  const { _autoDiger, ...p } = raw;
+  // defaultSenaryo birlesik mode default — preset'ler birlesik mode'da hesaplanir
+  // (UI mode'u degistirilmedigi icin defaultSenaryo() su anki mode'a baglidir;
+  //  bu fonksiyon karsilastirma icin tipik olarak birlesik mode'da cagrilir).
+  const base = mode === 'birlesik' ? defaultSenaryo() : {};
+  const merged = { ...base, ...p };
+  if (_autoDiger) {
+    const sumOthers = Object.entries(merged)
+      .filter(([k, v]) => k !== 'DIGER' && typeof v === 'number')
+      .reduce((a, [, v]) => a + v, 0);
+    merged.DIGER = Math.max(0, 100 - sumOthers);
+  }
+  return merged;
+}
+
+function computeScenarios(keys) {
+  readExempt();
+  const out = {};
+  for (const key of keys) {
+    const presetValues = buildPresetValues(key);
+    if (!presetValues) continue;
+    // Birlesik mode'da hesapla — preset'ler birlesik tasarlandi
+    out[key] = motor.runFromSenaryo2026(presetValues, {
+      barajExempt: exempt, barajPct: barajPct, splitAlliances: false,
+      mgOrtakIller: mgOrtakIller
+    });
+  }
+  return out;
+}
+
+function openCompareModal() {
+  const keys = ['S1', 'S2', 'S3'];
+  let sonuclar;
+  try {
+    sonuclar = computeScenarios(keys);
+  } catch (e) {
+    alert('Karsilastirma hesabi basarisiz: ' + e.message);
+    return;
+  }
+  // Birlesik mode parti seti — meta'dan al (S163 9-parti: CHP, AKP, MHP, MI, MG, YRP, SAADET, DEM, DIGER)
+  const partilerBirlesik = motor.meta.partiler;
+  const renkB = RENK_BIRLESIK;
+  const mgLabel = { tumu: 'Tümü Ortak (87)', b40: 'B: 40 il', c18: 'C: 18 il' }[mgListeMod] ?? mgListeMod;
+
+  // Sonuc.toplam → parti bazli MV ve oy% map'lerini cikar
+  const mvMap = {};   // { S1: {parti: mv}, ... }
+  const oyMap = {};   // { S1: {parti: oy%}, ... }
+  const totalMV = {}; // { S1: 600, ... }
+  for (const k of keys) {
+    const s = sonuclar[k];
+    if (!s) continue;
+    mvMap[k] = {}; oyMap[k] = {}; totalMV[k] = 0;
+    for (const t of s.toplam) {
+      mvMap[k][t.parti] = t.mv;
+      oyMap[k][t.parti] = t.oy_pct;
+      totalMV[k] += t.mv;
+    }
+  }
+
+  // Her parti icin max MV alan senaryoyu isaretle (win-mark)
+  const winnerScenario = {};
+  for (const p of partilerBirlesik) {
+    let best = null, bestVal = -1;
+    for (const k of keys) {
+      const v = mvMap[k]?.[p] ?? 0;
+      if (v > bestVal) { bestVal = v; best = k; }
+    }
+    winnerScenario[p] = (bestVal > 0) ? best : null;
+  }
+
+  const fmtMV = (k, p) => {
+    const v = mvMap[k]?.[p] ?? 0;
+    const cls = (winnerScenario[p] === k && v > 0) ? ' class="win-mark"' : '';
+    return `<td${cls}>${v}</td>`;
+  };
+  const fmtOy = (k, p) => `<td>${(oyMap[k]?.[p] ?? 0).toFixed(1)}</td>`;
+
+  const rows = partilerBirlesik.map(p => {
+    const renk = renkB[p] ?? '#999';
+    const muted = (mvMap.S1?.[p] === 0 && mvMap.S2?.[p] === 0 && mvMap.S3?.[p] === 0);
+    return `<tr${muted ? ' class="muted"' : ''}>
+      <td><div class="party-cell"><span class="swatch" style="background:${renk}"></span>${PARTI_AD_BIRLESIK[p] ?? p}</div></td>
+      ${keys.map(k => fmtMV(k, p)).join('')}
+      ${keys.map(k => fmtOy(k, p)).join('')}
+    </tr>`;
+  }).join('');
+
+  const body = document.getElementById('modal-body');
+  body.innerHTML = `
+    <h3>Senaryo Karşılaştırması — S1 vs S2 vs S3</h3>
+    <p class="compare-meta">
+      <strong>Hesap modu:</strong> Birleşik (7 liste) ·
+      <strong>Baraj:</strong> %${barajPct} ·
+      <strong>MG/YRP/SAADET:</strong> otomatik muaf ·
+      <strong>Ek muaf (kullanıcı):</strong> ${exempt.filter(x => !['MG','YRP','SAADET'].includes(x)).join(', ') || '—'} ·
+      <strong>MG liste modu:</strong> ${mgLabel}
+    </p>
+    <p class="compare-meta">
+      Toplam MV: <strong>S1=${totalMV.S1 ?? '—'}, S2=${totalMV.S2 ?? '—'}, S3=${totalMV.S3 ?? '—'}</strong>.
+      Her parti satırında en yüksek MV alan senaryo hücresi koyu vurgulanır.
+    </p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Parti</th>
+          <th colspan="3" style="text-align:center; border-bottom:1px solid var(--border);">Milletvekili</th>
+          <th colspan="3" style="text-align:center; border-bottom:1px solid var(--border);">Sandık Oyu (%)</th>
+        </tr>
+        <tr>
+          <th>S1</th><th>S2</th><th>S3</th>
+          <th>S1</th><th>S2</th><th>S3</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows}
+        <tr class="total-row">
+          <td><strong>Toplam</strong></td>
+          <td>${totalMV.S1 ?? '—'}</td>
+          <td>${totalMV.S2 ?? '—'}</td>
+          <td>${totalMV.S3 ?? '—'}</td>
+          <td>—</td><td>—</td><td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="compare-meta" style="margin-top:14px;">
+      <em>Not:</em> Slider'larındaki mevcut hipotezi etkilemez. Bir senaryoyu UI'ye yüklemek için modali kapatıp <strong>S1/S2/S3</strong> butonuna tıkla.
+    </p>
+  `;
+  document.getElementById('info-modal').classList.add('open');
 }
 
 // === SLIDER'LARI KUR ===
@@ -731,6 +899,9 @@ document.querySelectorAll('#toggle-preset button').forEach(btn => {
   });
 });
 
+// === Karsilastirma butonu ===
+document.getElementById('compare-btn')?.addEventListener('click', openCompareModal);
+
 // === Reset to 2023 ===
 document.getElementById('reset-btn').addEventListener('click', () => {
   values = { ...defaultSenaryo() };
@@ -828,7 +999,7 @@ const KONTROL_BILGI = {
     aciklama: `Üç farklı anket senaryosu için hazır slider değerleri. Tıkladığında oy oranları otomatik dolar; istersen slider'ları manuel değiştirebilirsin.`,
     detay: `<strong>S1 (Mert senaryosu):</strong> CHP %29.1, AK Parti %25.4, MHP %5.9, Milliyetçi İttifak %17.6, Milli Görüş %10, DEM %9, Diğer %3.2 (SOL ittifak yok)
     <br><br><strong>S2:</strong> CHP %30, AKP %27.2, Milliyetçi İttifak %18, DEM %8.6, Milli Görüş %8, MHP %6, Sol İttifak %1.8, Diğer %1.3
-    <br><br><strong>S3:</strong> CHP %29.2, AKP %28.6, Milliyetçi İttifak %18, DEM %9, Milli Görüş %7, MHP %6.3, Sol İttifak %1.9
+    <br><br><strong>S3:</strong> CHP %29.2, AKP %28.6, Milliyetçi İttifak %18, DEM %9, Milli Görüş %7, MHP %6.3, Sol İttifak %1.9, Diğer (residual = 100 − toplam ≈ %1.9)
     <br><br><strong>Milli Görüş bölme kuralı:</strong> SAADET = MG_total / 3 (1/3), YRP = MG_total × 2/3 (2/3). Örnek S1: MG %10 → SAADET %3.33, YRP %6.67.
     <br><br><strong>Default:</strong> Slider'ları ANK-AR matris çıktısı 2026 ulkesel default'una döner. Birleşik moddan başlar.`
   },

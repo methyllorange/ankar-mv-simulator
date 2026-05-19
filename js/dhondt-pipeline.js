@@ -504,7 +504,8 @@ export class Pipeline {
       const oylar = cevreOylar[cid];
       if (!oylar) continue;
       const votes = Object.fromEntries(PARTIES.map(p => [p, oylar[p]]));
-      const isOrtak = mgOrtakIller.has(cevreToIl(cid));
+      // S164: cevre_id ile direkt eslesme ya da il_adi ile (backward compat)
+      const isOrtak = mgOrtakIller.has(cid) || mgOrtakIller.has(cevreToIl(cid));
       if (isOrtak) {
         votes.MG = (votes.YRP ?? 0) + (votes.SAADET ?? 0);
         votes.YRP = 0;

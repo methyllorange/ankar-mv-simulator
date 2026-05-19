@@ -204,6 +204,37 @@ ok(sonucB40.meta.mg_ortak_count === 40, `mg_ortak_count = 40 (got ${sonucB40.met
 const mgB40 = sonucB40.toplam.find(r => r.parti === 'MG').mv;
 console.log(`  B 40 sonuc: MG=${mgB40}, YRP=${sonucB40.toplam.find(r=>r.parti==='YRP').mv}, SAADET=${sonucB40.toplam.find(r=>r.parti==='SAADET').mv}`);
 
+console.log('\n=== 16. S1/S2/S3 senaryo preset karsilastirma sanity (S164, 2026-05-19) ===');
+// UI preset'leri ile aynı kompozisyon. _autoDiger S3 icin residual hesap.
+const senaryoPresetMG = (mg) => ({ YRP: mg * 2 / 3, SAADET: mg / 3 });
+const PRESETS = {
+  S1: { CHP: 29.1, AKP: 25.4, MHP: 5.9, MI: 17.6, ...senaryoPresetMG(10), DEM: 9, DIGER: 3.2 },
+  S2: { CHP: 30,   AKP: 27.2, MHP: 6,   MI: 18,   ...senaryoPresetMG(8),  DEM: 8.6, DIGER: 1.3 + 1.8 },
+  S3: { CHP: 29.2, AKP: 28.6, MHP: 6.3, MI: 18,   ...senaryoPresetMG(7),  DEM: 9 }  // DIGER residual
+};
+// S3 DIGER residual hesabi: 100 - sum(others)
+const s3sum = Object.values(PRESETS.S3).reduce((a, b) => a + b, 0);
+PRESETS.S3.DIGER = Math.max(0, 100 - s3sum);
+ok(Math.abs(PRESETS.S3.DIGER - 1.9) < 0.001, `S3 DIGER residual = 1.9 (got ${PRESETS.S3.DIGER.toFixed(2)})`);
+const s3total = Object.values(PRESETS.S3).reduce((a, b) => a + b, 0);
+ok(Math.abs(s3total - 100) < 0.001, `S3 toplam = 100 (got ${s3total.toFixed(2)})`);
+
+// 3 senaryo paralel run — birlesik mode, tumu ortak (87 cevre)
+const cevreSet = new Set(motor.cevreSeats.map(c => c.cevre_id));
+const compareResults = {};
+for (const [k, sen] of Object.entries(PRESETS)) {
+  compareResults[k] = motor.runFromSenaryo2026(sen, {
+    splitAlliances: false, mgOrtakIller: cevreSet
+  });
+}
+for (const k of ['S1', 'S2', 'S3']) {
+  const s = compareResults[k];
+  ok(s.meta.total_mv === 600, `${k} toplam = 600 MV (got ${s.meta.total_mv})`);
+  const chp = s.toplam.find(r => r.parti === 'CHP').mv;
+  const akp = s.toplam.find(r => r.parti === 'AKP').mv;
+  console.log(`  ${k}: CHP=${chp}, AKP=${akp}, MG=${s.toplam.find(r=>r.parti==='MG').mv}, MI=${s.toplam.find(r=>r.parti==='MI').mv}, DEM=${s.toplam.find(r=>r.parti==='DEM').mv}`);
+}
+
 console.log('\n=== Sonuc ===');
 console.log(`PASS: ${pass}  FAIL: ${fail}`);
 if (fail > 0) process.exit(1);
