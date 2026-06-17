@@ -1,6 +1,6 @@
 /**
  * dhondt-pipeline.js v3 (S163)
- * D'Hondt MV senaryo motoru — ANK-AR oy gecisi matrisi + tek pipeline.
+ * D'Hondt MV senaryo motoru — oy gecisi matrisi + tek pipeline.
  *
  * Mantik (yoldas onayli, S163):
  *   1. Matris bir kez 2023 ilce baseline'ina uygulanir → 2026 ilce baseline (sabit)

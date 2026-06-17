@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
   "generated_at": "2026-05-16",
-  "description": "D'Hondt MV motoru — matris-bazli metodoloji (ANK-AR oy gecisi matrisi) + 2023 baseline",
+  "description": "D'Hondt MV motoru — matris-bazli metodoloji (oy gecisi matrisi) + 2023 baseline",
   "toplam_mv": 600,
   "cevre_sayisi": 87,
   "il_sayisi": 81,

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <style>
     :root {
-      /* ANK-AR sade palet — Tailwind-ish gri-mavi */
+      /* Sade palet — Tailwind-ish gri-mavi */
       --bg-primary: #FFFFFF;
       --bg-secondary: #F9FAFB;
       --bg-tertiary: #F3F4F6;
@@ -20,7 +20,7 @@
       --text-tertiary: #9CA3AF;
       --border: #E5E7EB;
       --border-light: #F3F4F6;
-      --accent: #053F6B;   /* ank-ar deep blue */
+      --accent: #053F6B;   /* deep blue */
       --success: #10B981; --warning: #F59E0B; --danger: #EF4444;
       --radius-sm: 6px; --radius-md: 8px; --radius-lg: 8px;
       --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
@@ -32,7 +32,7 @@
            font-size: 13px; line-height: 1.5;
            -webkit-font-smoothing: antialiased; }
 
-    /* Top banner — ANK-AR mavi */
+    /* Top banner */
     .navbar { background: #053f6b;
                position: sticky; top: 0; z-index: 50; width: 100%;
                box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
@@ -329,21 +329,13 @@
 
 <nav class="navbar">
   <div class="navbar-inner">
-    <a class="nav-logo-link" href="https://ank-ar.com/" title="Ana Sayfa">
-      <img src="https://ank-ar.com/static/logo.png" alt="ANK-AR" width="90" height="90">
-    </a>
-    <div class="nav-divider" aria-hidden="true"></div>
     <div class="nav-title-block">
       <div class="nav-title">D'Hondt Milletvekili Senaryo Dashboardu</div>
     </div>
-    <a class="nav-cta" href="https://ank-ar.com/" target="_blank" rel="noopener" title="ANK-AR Mahalle Bazlı Seçim Sonuçları">
-      ANK-AR Mahalle Bazlı Seçim Sonuçları
-      <span class="arrow" aria-hidden="true">↗</span>
-    </a>
   </div>
 </nav>
 
-<span id="header-baseline" style="display:none">ANK-AR matris (2023 baseline)</span>
+<span id="header-baseline" style="display:none">Oy geçişi matrisi (2023 baseline)</span>
 
 <div class="container">
   <div style="display:none">
@@ -363,7 +355,7 @@
       <div class="card">
         <div class="h3-row"><h3>Metodoloji</h3><button class="mini-info-btn" data-control-info="metodoloji" title="Bilgi">!</button></div>
         <p style="font-size:11px; color:var(--text-secondary); margin:0 0 12px; line-height:1.4;">
-          <strong>ANK-AR oy geçişi matrisi</strong> (Mayıs 2026) ilçe seviyesinde uygulanır.
+          <strong>Oy geçişi matrisi</strong> (Mayıs 2026) ilçe seviyesinde uygulanır.
           KARARSIZ payı row-renormalize ile dağıtılır.
         </p>
         <div class="h3-row"><h3>İttifak Modu</h3><button class="mini-info-btn" data-control-info="ittifak" title="Bilgi">!</button></div>
@@ -426,7 +418,7 @@
           </p>
         </div>
         <button class="run-btn" id="run-btn">▶ Çalıştır</button>
-        <button id="reset-btn" style="width:100%; margin-top:8px; padding:8px; background:transparent; border:1px solid var(--border); border-radius:6px; color:var(--text-secondary); font-size:12px; cursor:pointer;" title="Slider'ları default değerlere döndür (Birleşik: 2023 gerçek / Ayrı: ANK-AR matris çıktısı 2026)">↺ Default'a sıfırla</button>
+        <button id="reset-btn" style="width:100%; margin-top:8px; padding:8px; background:transparent; border:1px solid var(--border); border-radius:6px; color:var(--text-secondary); font-size:12px; cursor:pointer;" title="Slider'ları default değerlere döndür (Birleşik: 2023 gerçek / Ayrı: matris çıktısı 2026)">↺ Default'a sıfırla</button>
       </div>
 
     </div>
@@ -945,7 +937,7 @@ const METRIK_BILGI = {
     baslik: 'Oy Oranı (%) — Harita Modu',
     aciklama: `Partinin secili bolgede 2026'da aldığı <strong>oy yuzdesini</strong> gosterir (matris uygulanmış 2026 ilce dağılımı, D'Hondt değil).`,
     formula: `oy_oranı(parti, bolge) = ( parti_oy<sub>bolge, 2026</sub> / gecerli_oy<sub>bolge</sub> ) × 100`,
-    yontem: `Kullanıcı 2023 hipotezi → uniform swing ile her ilçenin 2023 dağılımı yeniden ölçeklenir → <strong>ANK-AR oy geçişi matrisi</strong> ilçe seviyesinde uygulanır (KARARSIZ payı row-renormalize). Sonuçta çıkan 2026 ilçe dağılımı gerçek oy oranıdır.`
+    yontem: `Kullanıcı 2023 hipotezi → uniform swing ile her ilçenin 2023 dağılımı yeniden ölçeklenir → <strong>oy geçişi matrisi</strong> ilçe seviyesinde uygulanır (KARARSIZ payı row-renormalize). Sonuçta çıkan 2026 ilçe dağılımı gerçek oy oranıdır.`
   },
   mv: {
     baslik: 'Milletvekili Sayısı — Harita Modu',
@@ -982,7 +974,7 @@ function openInfoModal() {
     <p>${bilgi.yontem}</p>
     <h4>Genel Pipeline</h4>
     <p>Kullanıcı 2023 hipotezi (slider) → <code>uniform swing</code> ilce 2023 dağılımı →
-       <code>ANK-AR oy geçişi matrisi</code> (KARARSIZ row-renorm) → 2026 ilce dağılımı →
+       <code>oy geçişi matrisi</code> (KARARSIZ row-renorm) → 2026 ilce dağılımı →
        87 çevre toplamı → <code>D'Hondt</code> (baraj %${barajPct}, MHP muaf) → 600 MV → il agregati.
        İttifak modu: <code>${mode}</code>.</p>
   `;
@@ -1001,11 +993,11 @@ const KONTROL_BILGI = {
     <br><br><strong>S2:</strong> CHP %30, AKP %27.2, Milliyetçi İttifak %18, DEM %8.6, Milli Görüş %8, MHP %6, Sol İttifak %1.8, Diğer %1.3
     <br><br><strong>S3:</strong> CHP %29.2, AKP %28.6, Milliyetçi İttifak %18, DEM %9, Milli Görüş %7, MHP %6.3, Sol İttifak %1.9, Diğer (residual = 100 − toplam ≈ %1.9)
     <br><br><strong>Milli Görüş bölme kuralı:</strong> SAADET = MG_total / 3 (1/3), YRP = MG_total × 2/3 (2/3). Örnek S1: MG %10 → SAADET %3.33, YRP %6.67.
-    <br><br><strong>Default:</strong> Slider'ları ANK-AR matris çıktısı 2026 ulkesel default'una döner. Birleşik moddan başlar.`
+    <br><br><strong>Default:</strong> Slider'ları matris çıktısı 2026 ulkesel default'una döner. Birleşik moddan başlar.`
   },
   metodoloji: {
-    baslik: 'Metodoloji — ANK-AR oy geçişi matrisi',
-    aciklama: `Senaryo, ANK-AR'ın <strong>"Yarın Milletvekili Genel Seçimi Olsa"</strong> anketinden çıkan <strong>parti × parti oy geçişi matrisi</strong> ile üretilir. Matris bir kez 2023 ilçe verilerine uygulanarak <strong>"2026 ilçe baseline"</strong> oluşturulur, slider'lar bu baseline'a swing uygular.`,
+    baslik: 'Metodoloji — oy geçişi matrisi',
+    aciklama: `Senaryo, <strong>"Yarın Milletvekili Genel Seçimi Olsa"</strong> anketinden çıkan <strong>parti × parti oy geçişi matrisi</strong> ile üretilir. Matris bir kez 2023 ilçe verilerine uygulanarak <strong>"2026 ilçe baseline"</strong> oluşturulur, slider'lar bu baseline'a swing uygular.`,
     detay: `<strong>Pipeline (S163):</strong>
     <br>1. Matris bir kez 2023 ilçe baseline'a uygulanır → her ilçe için 2026 parti payları (sabit)
     <br>2. Slider'lar 2026 ulkesel hipotezi olarak okun; default = matris çıktısı ulkesel
@@ -1028,7 +1020,7 @@ const KONTROL_BILGI = {
     baslik: 'İttifak Modu',
     aciklama: `Partilerin <strong>ittifak listesi mi yoksa ayrı listeler mi</strong> sunduğunu belirler. D'Hondt hesabı çevre bazında bu listelere göre yapılır.`,
     detay: `<strong>Birleşik (7 liste):</strong> CHP, AKP, MHP, MI (=İYİ + A Parti), YRP (=Milli Görüş İttifakı), DEM, Diğer. A Parti partisi MI içinde, milletvekili dağıtımına ayrı katılmaz.
-    <br><br><strong>Ayrı (11 liste):</strong> CHP, AKP, MHP, İYİ, Zafer, A Parti, YRP, Saadet, DEM, TİP, Diğer. ZAFER/SAADET/TİP partileri ANK-AR matrisinde ayrı destinasyon olarak yok — matris çıktısı ilçe seviyesinde 2023 tarihsel oranıyla bölünür (Zafer ↔ İYİ, Saadet ↔ YRP, TİP ↔ Diğer). Baraj %7 (MHP muaf).`
+    <br><br><strong>Ayrı (11 liste):</strong> CHP, AKP, MHP, İYİ, Zafer, A Parti, YRP, Saadet, DEM, TİP, Diğer. ZAFER/SAADET/TİP partileri matriste ayrı destinasyon olarak yok — matris çıktısı ilçe seviyesinde 2023 tarihsel oranıyla bölünür (Zafer ↔ İYİ, Saadet ↔ YRP, TİP ↔ Diğer). Baraj %7 (MHP muaf).`
   },
   seviye: {
     baslik: 'Harita Seviyesi',
@@ -1049,7 +1041,7 @@ const KONTROL_BILGI = {
   },
   senaryo: {
     baslik: 'Senaryo — 2026 hipotezi (Oy %)',
-    aciklama: `Slider'lar <strong>2026 ulkesel oy payı hipotezinizi</strong> gösterir. Default değerler ANK-AR oy geçişi matrisinin ürettiği 2026 tahminidir. Slider'ı oynatın → matris çıktısı 2026 dağılımına swing uygulanır → ilçeler güncellenir → D'Hondt.`,
+    aciklama: `Slider'lar <strong>2026 ulkesel oy payı hipotezinizi</strong> gösterir. Default değerler oy geçişi matrisinin ürettiği 2026 tahminidir. Slider'ı oynatın → matris çıktısı 2026 dağılımına swing uygulanır → ilçeler güncellenir → D'Hondt.`,
     detay: `<strong>Mantık:</strong> Matris bir kez 2023 ilçe verilerine uygulanarak "2026 ilçe baseline"ı hesaplanır. Slider'lar bu baseline'a karşı swing katsayısı üretir: <code>swing[parti] = slider / matris_çıktısı</code>.
     <br><br><strong>Slider 0-40% arası, 0.1% adımlı.</strong> Toplam %100'den sapsa sistem otomatik normalize eder ama "Toplam" göstergesi kırmızıysa düzeltmek gerekir.
     <br><br><strong>Ayrı modda 11 slider:</strong> CHP, AKP, MHP, İYİ, Zafer, A Parti, YRP, Saadet, DEM, TİP, Diğer.
